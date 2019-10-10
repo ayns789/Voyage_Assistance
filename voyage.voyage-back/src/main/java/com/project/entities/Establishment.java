@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -27,9 +28,9 @@ public class Establishment extends AbstractEntityId {
 	@NotNull
 	private int capacity;
 	
-	@OneToMany
+	@OneToOne
 	@JoinColumn(name="address_id")
-	private List<Address> addresses;
+	private Address address;
 	
 	
 	
@@ -82,15 +83,15 @@ public class Establishment extends AbstractEntityId {
 	}
 
 
-	public List<Address> getAddresses() {
-		return addresses;
+
+	public Address getAddress() {
+		return address;
 	}
 
 
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-
 
 
 	public List<Activity> getActivities() {
