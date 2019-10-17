@@ -17,29 +17,26 @@ import org.hibernate.validator.constraints.Length;
 public class Account extends AbstractEntityId {
 	 
 	
-	@NotBlank
-	@Length( min = 2, max = 30)
+	
 	private String firstName;
 	
-	@NotBlank
-	@Length( min = 2, max = 30)
+	
 	private String lastName;
 	
-	@NotBlank
-	@Length( min = 6, max = 15)
+	
 	private String loginAccount;
 	
-	@NotBlank
-	@Length( min = 6, max = 15)
+	
 	private String passwordAccount;
 	
 
 //	(name = "code_role", referencedColumnName = "code_role")
-	@ManyToOne
-	@JoinColumn(nullable=false)
+	
+	@OneToOne
+	@JoinColumn(nullable=false, name="role_id")
 	private Role role;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(nullable=false, name="civility_id")
 	private Civility civility;
 	
@@ -48,7 +45,7 @@ public class Account extends AbstractEntityId {
 	private List<Phone> phones;
 	
 	@OneToOne
-	@JoinColumn(name="email_id")
+	@JoinColumn(nullable=true, name="email_id")
 	private Email email;
 	
 	@OneToMany
@@ -146,7 +143,7 @@ public class Account extends AbstractEntityId {
 //	public void setContacts(List<Contact> contacts) {
 //		this.contacts = contacts;
 //	}
-
+//
 //	public List<Booking> getBookings() {
 //		return bookings;
 //	}

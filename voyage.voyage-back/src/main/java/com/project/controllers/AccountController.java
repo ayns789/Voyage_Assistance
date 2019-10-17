@@ -1,12 +1,18 @@
 package com.project.controllers;
 
-import java.util.List;
 
+import java.util.List;
+import javax.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.project.dtos.user.AccountCreateDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.services.AccountService;
+
 
 
 @RestController
@@ -24,6 +30,11 @@ public class AccountController {
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
 	return accounts;
+    }
+    
+    @PostMapping(value="/adduser")
+    public void createAccount(@RequestBody @Valid AccountCreateDto account) {
+	service.create(account);
     }
 
 }

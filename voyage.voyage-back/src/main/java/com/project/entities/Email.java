@@ -24,11 +24,11 @@ public class Email extends AbstractEntityId {
 	private String email;
 	
 	@OneToOne
-	@JoinColumn(name="account_id")
+	@JoinColumn(nullable=true, name="account_id")
 	private Account account;
 	
 	@ManyToOne
-	@JoinColumn(name="establishment_id")
+	@JoinColumn(nullable=true, name="establishment_id")
 	private Establishment establishment;
 	
 	

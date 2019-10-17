@@ -1,17 +1,14 @@
 package com.project.services;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.project.dtos.user.AccountCreateDto;
 import com.project.dtos.user.AccountViewDto;
 
 
-@Service
+
 public interface AccountService {
 	
-	void create(AccountCreateDto diploma);
+	void create(AccountCreateDto account);
 
 	AccountViewDto getOne(Long id);
 
@@ -19,7 +16,7 @@ public interface AccountService {
 	
     void delete(Long id);
 
-    void update(Long id, AccountCreateDto diploma);
+    void update(Long id, AccountCreateDto account);
 
 	List<AccountViewDto> getAll();
 
