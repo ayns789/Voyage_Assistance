@@ -1,11 +1,8 @@
 package com.project.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Value;
 
 @Entity
 @Table(name="t_role")

@@ -6,12 +6,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import org.hibernate.validator.constraints.Length;
 
 
 @Entity
@@ -137,24 +134,6 @@ public class Account extends AbstractEntityId {
 	public void setCivility(Civility civility) {
 		this.civility = civility;
 	}
-
-//	public List<Contact> getContacts() {
-//		return contacts;
-//	}
-//
-//	public void setContacts(List<Contact> contacts) {
-//		this.contacts = contacts;
-//	}
-//
-//	public List<Booking> getBookings() {
-//		return bookings;
-//	}
-//
-//	public void setBookings(List<Booking> bookings) {
-//		this.bookings = bookings;
-//	}
-	
-	
 	
 
 }

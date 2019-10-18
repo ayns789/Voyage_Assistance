@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -15,72 +16,38 @@ import javax.persistence.Table;
 public class Service extends AbstractEntityId {
 	
 	@Column(length=50)
-	private String medicalCare;
-	
-	@Column(length=50)
-	private String occupationalTherapist;
-	
-	@Column(length=50)
-	private String dietetic;
+	private String categoryService;
 	
 	
 	@OneToMany
-	@JoinColumn(name="media_id")
-	private List<Media> medias;
-	
-	@OneToMany
-	@JoinColumn(name="special_attention_id")
-	private List<SpecialAttention> specialAttentions;
+	@JoinTable(
+		       name = "t_establishment_service",
+		       joinColumns = @JoinColumn(name = "service_id", referencedColumnName="id"),
+		       inverseJoinColumns = @JoinColumn(name = "establishment_id", referencedColumnName="id")
+		    )
+	private List<Establishment> establishment;
 	
 	
 	public Service() {
 		
 	}
 
-
-	public String getMedicalCare() {
-		return medicalCare;
+	public String getCategoryService() {
+		return categoryService;
 	}
 
-	public void setMedicalCare(String medicalCare) {
-		this.medicalCare = medicalCare;
-	}
-
-	public String getOccupationalTherapist() {
-		return occupationalTherapist;
-	}
-
-	public void setOccupationalTherapist(String occupationalTherapist) {
-		this.occupationalTherapist = occupationalTherapist;
-	}
-
-	public String getDietetic() {
-		return dietetic;
-	}
-
-	public void setDietetic(String dietetic) {
-		this.dietetic = dietetic;
+	public void setCategoryService(String categoryService) {
+		this.categoryService = categoryService;
 	}
 
 
-	public List<Media> getMedias() {
-		return medias;
+	public List<Establishment> getEstablishment() {
+		return establishment;
 	}
 
 
-	public void setMedias(List<Media> medias) {
-		this.medias = medias;
+	public void setEstablishment(List<Establishment> establishment) {
+		this.establishment = establishment;
 	}
-
-
-	public List<SpecialAttention> getSpecialAttentions() {
-		return specialAttentions;
-	}
-
-
-	public void setSpecialAttentions(List<SpecialAttention> specialAttentions) {
-		this.specialAttentions = specialAttentions;
-	}
-	
 
 }

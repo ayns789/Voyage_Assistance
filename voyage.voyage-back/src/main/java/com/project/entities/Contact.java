@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -23,13 +24,12 @@ public class Contact extends AbstractEntityId {
 	@Column(nullable = false)
 	private LocalDate dateTreatment;
 	
-	@ManyToOne
-	@JoinColumn(name="account_id")
-	private Account account;
+	@OneToOne
+	@JoinColumn(name="email_id")
+	private Email email;
 	
 	@ManyToOne
 	@JoinColumn(name="subject_id")
-
 	private Subject subject;
 	
 	public Contact() {
@@ -60,18 +60,21 @@ public class Contact extends AbstractEntityId {
 		this.dateTreatment = dateTreatment;
 	}
 
-	public Account getAccount() {
-		return account;
+	public Email getEmail() {
+		return email;
 	}
 
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setEmail(Email email) {
+		this.email = email;
 	}
 
 	public Subject getSubject() {
 		return subject;
 	}
 
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
 
 	
 }

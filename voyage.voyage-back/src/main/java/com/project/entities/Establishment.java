@@ -31,9 +31,7 @@ public class Establishment extends AbstractEntityId {
 	@OneToOne
 	@JoinColumn(name="address_id")
 	private Address address;
-	
-	
-	
+
 	@OneToMany
 	 @JoinTable(
 	       name = "t_establishment_activity",
