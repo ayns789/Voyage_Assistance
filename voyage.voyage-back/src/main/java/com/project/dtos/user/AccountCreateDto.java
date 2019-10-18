@@ -1,14 +1,8 @@
 package com.project.dtos.user;
 
-import java.util.List;
 import javax.validation.constraints.NotBlank;
-
 import org.hibernate.validator.constraints.Length;
-
-import com.project.entities.Address;
-import com.project.entities.Booking;
 import com.project.entities.Civility;
-import com.project.entities.Contact;
 import com.project.entities.Role;
 
 public class AccountCreateDto {
@@ -33,13 +27,6 @@ public class AccountCreateDto {
 	
 	private Civility civility;
 	
-	private List<Address> addresses;
-	
-	private List<Contact> contacts;
-	
-	private List<Booking> bookings;
-	
-	
 	public AccountCreateDto() {
 		
 	}
@@ -48,7 +35,7 @@ public class AccountCreateDto {
 
 	public AccountCreateDto(@NotBlank @Length(min = 2, max = 30) String firstName,
 		@NotBlank @Length(min = 2, max = 30) String lastName, @Length(min = 6, max = 15) String login,
-		@Length(min = 6, max = 15) String password, Role role, Civility civility, List<Address> addresses) {
+		@Length(min = 6, max = 15) String password, Role role, Civility civility) {
 	super();
 	this.firstName = firstName;
 	this.lastName = lastName;
@@ -56,7 +43,6 @@ public class AccountCreateDto {
 	this.password = password;
 	this.role = role;
 	this.civility = civility;
-	this.addresses = addresses;
 }
 
 
@@ -107,34 +93,5 @@ public class AccountCreateDto {
 	public void setCivility(Civility civility) {
 		this.civility = civility;
 	}
-
-	public List<Contact> getContacts() {
-		return contacts;
-	}
-
-	public void setContacts(List<Contact> contacts) {
-		this.contacts = contacts;
-	}
-
-	public List<Booking> getBookings() {
-		return bookings;
-	}
-
-	public void setBookings(List<Booking> bookings) {
-		this.bookings = bookings;
-	}
-
-
-
-	public List<Address> getAddresses() {
-		return addresses;
-	}
-
-
-
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
-
 
 }
