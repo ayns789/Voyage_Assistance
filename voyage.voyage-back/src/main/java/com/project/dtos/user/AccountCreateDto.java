@@ -1,12 +1,6 @@
 package com.project.dtos.user;
 
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -27,37 +21,22 @@ public class AccountCreateDto {
 	@Length( min = 2, max = 30)
 	private String lastName;
 	
-//	@NotBlank
+	@NotBlank
 	@Length( min = 6, max = 15)
 	private String login;
 	
-//	@NotBlank
+	@NotBlank
 	@Length( min = 6, max = 15)
 	private String password;
-	
 
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "code_role", referencedColumnName = "code_role")
 	private Role role;
 	
-//	@OneToOne
 	private Civility civility;
 	
 	private List<Address> addresses;
 	
-//	@OneToMany(
-//	        mappedBy = "account",
-//	        cascade = CascadeType.ALL,
-//	        orphanRemoval = true
-//	    )
 	private List<Contact> contacts;
 	
-
-//	@OneToMany(
-//	        mappedBy = "account",
-//	        cascade = CascadeType.ALL,
-//	        orphanRemoval = true
-//	    )
 	private List<Booking> bookings;
 	
 	
