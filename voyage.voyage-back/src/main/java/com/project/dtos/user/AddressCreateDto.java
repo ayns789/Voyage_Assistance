@@ -36,6 +36,24 @@ public class AddressCreateDto {
 		
 	}
 
+
+	public AddressCreateDto(Long accountId, Long establishmentId,
+			@NotBlank @Length(min = 1, max = 5) String streetNumber,
+			@NotBlank @Length(min = 3, max = 20) String streetName,
+			@NotBlank @Length(min = 3, max = 20) String cityName, @NotBlank @Length(min = 2, max = 6) String postalCode,
+			Region region, Country country) {
+		super();
+		this.accountId = accountId;
+		this.establishmentId = establishmentId;
+		this.streetNumber = streetNumber;
+		this.streetName = streetName;
+		this.cityName = cityName;
+		this.postalCode = postalCode;
+		this.region = region;
+		this.country = country;
+	}
+
+
 	public Long getAccountId() {
 		return accountId;
 	}
