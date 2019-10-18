@@ -72,7 +72,6 @@ public class AccountServiceImpl implements AccountService {
 		account.setPassword(entity.getPasswordAccount());
 		account.setCivility(entity.getCivility());
 		account.setRole(entity.getRole());
-		account.setAddresses(entity.getAddresses());
 		return account;
 	}
 
