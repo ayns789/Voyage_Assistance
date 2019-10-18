@@ -2,8 +2,10 @@ package com.project.entities;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -43,7 +45,14 @@ public class Address extends AbstractEntityId {
 	@ManyToOne
 	@JoinColumn(nullable=true, name="country_id")
 	private Country country;
-
+	
+	@OneToOne
+	@JoinTable(
+		       name = "t_account_address",
+		       joinColumns = @JoinColumn(name = "address_id", referencedColumnName="id"),
+		       inverseJoinColumns = @JoinColumn(name = "account_id", referencedColumnName="id")
+		    )
+	private Account account;
 	
 	public Address () {
 		
@@ -91,6 +100,38 @@ public class Address extends AbstractEntityId {
 	public void setEstablishment(Establishment establishment) {
 		this.establishment = establishment;
 	}
+
+
+	public Region getRegion() {
+		return region;
+	}
+
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
+
+	public Country getCountry() {
+		return country;
+	}
+
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+
+
+	public Account getAccount() {
+		return account;
+	}
+
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	
+	
 
 	
 }

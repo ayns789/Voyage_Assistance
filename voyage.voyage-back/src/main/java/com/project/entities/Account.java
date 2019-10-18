@@ -1,6 +1,8 @@
 package com.project.entities;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -48,12 +50,12 @@ public class Account extends AbstractEntityId {
 	@JoinColumn(nullable=true, name="email_id")
 	private Email email;
 	
-	@OneToMany
-	 @JoinTable(
-	       name = "t_account_address",
-	       joinColumns = @JoinColumn(name = "account_id"),
-	       inverseJoinColumns = @JoinColumn(name = "address_id")
-	    )
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinTable(
+		       name = "t_account_address",
+		       joinColumns = @JoinColumn(name = "account_id", referencedColumnName="id"),
+		       inverseJoinColumns = @JoinColumn(name = "address_id", referencedColumnName="id")
+		    )
 	 private List<Address> addresses;
 	
 	
