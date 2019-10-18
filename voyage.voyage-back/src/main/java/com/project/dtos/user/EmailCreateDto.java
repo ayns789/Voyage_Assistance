@@ -1,24 +1,24 @@
 package com.project.dtos.user;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.beans.factory.annotation.Value;
 
 
-public class EmailUserCreateDto {
+public class EmailCreateDto {
+	
+	
+    private Long accountId;
+    
+    private Long establishmentId;
 
 	@Value("false")
 	private boolean professional;
 	
 	@NotBlank
 	private String email;
-	
-	@NotNull
-    private Long accountId;
 
 	
-	public EmailUserCreateDto() {
+	public EmailCreateDto() {
 		
 	}
 
@@ -45,6 +45,14 @@ public class EmailUserCreateDto {
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
-	
+
+	public Long getEstablishmentId() {
+		return establishmentId;
+	}
+
+	public void setEstablishmentId(Long establishmentId) {
+		this.establishmentId = establishmentId;
+	}
+
 
 }

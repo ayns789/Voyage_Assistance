@@ -8,15 +8,15 @@ import com.project.entities.Role;
 public class AccountCreateDto {
 	
 	@NotBlank
-	@Length( min = 2, max = 30)
+	@Length( min = 2, max = 50)
 	private String firstName;
 	
 	@NotBlank
-	@Length( min = 2, max = 30)
+	@Length( min = 2, max = 50)
 	private String lastName;
 	
 	@NotBlank
-	@Length( min = 6, max = 15)
+	@Length( min = 6, max = 40)
 	private String login;
 	
 	@NotBlank

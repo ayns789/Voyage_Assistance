@@ -4,13 +4,14 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import org.springframework.beans.factory.annotation.Value;
 
 import com.project.enums.PhoneType;
 
 public class PhoneCreateDto {
 	
-	@Value("false")
+	@NotNull
+    private Long accountId;
+	
 	private boolean professional;
 	
 	@NotBlank
@@ -19,15 +20,10 @@ public class PhoneCreateDto {
 	
 	@Enumerated(EnumType.STRING)
 	private PhoneType phoneType;
-	
-	@NotNull
-    private Long accountId;
-	
-	
+		
 	public PhoneCreateDto() {
 		
 	}
-
 
 	public boolean isProfessional() {
 		return professional;
@@ -58,5 +54,13 @@ public class PhoneCreateDto {
 		this.phoneType = phoneType;
 	}
 
+	public Long getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Long accountId) {
+		this.accountId = accountId;
+	}
+	
 
 }
