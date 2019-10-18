@@ -1,9 +1,12 @@
 package com.project.services;
 
+import org.springframework.stereotype.Service;
+
 import com.project.dtos.user.AddressCreateDto;
 import com.project.entities.Address;
 import com.project.repositories.AddressRepo;
 
+@Service
 public class AddressServiceImpl implements AddressService {
 
 	

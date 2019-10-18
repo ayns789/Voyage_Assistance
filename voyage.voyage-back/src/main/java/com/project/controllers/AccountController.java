@@ -43,7 +43,7 @@ public class AccountController {
     }
     
     @PostMapping("/{id}/address")
-    public void patchEndDate(@PathVariable("id") Long id,
+    public void postAddress(@PathVariable("id") Long id,
 	    @RequestBody @Valid AddressCreateDto address) {
 	serviceAd.one(id);
     }
