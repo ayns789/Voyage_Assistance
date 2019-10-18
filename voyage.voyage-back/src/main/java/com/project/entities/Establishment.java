@@ -31,6 +31,10 @@ public class Establishment extends AbstractEntityId {
 	@OneToOne
 	@JoinColumn(name="address_id")
 	private Address address;
+	
+	@OneToOne
+	@JoinColumn(name="category_id")
+	private Category category;
 
 	@OneToMany
 	 @JoinTable(
@@ -110,5 +114,15 @@ public class Establishment extends AbstractEntityId {
 	public void setServices(List<Service> services) {
 		this.services = services;
 	}
-	
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 }
