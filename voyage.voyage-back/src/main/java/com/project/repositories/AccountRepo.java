@@ -13,14 +13,10 @@ import com.project.entities.Account;
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Long>{
 
-	
-	
-	
+
 //	se servir d'un DTO pour afficher les infos que l'on souhaite
 	AccountViewDto getById(Long id);
-	
-	
-	
+
 	List<AccountViewDto> getAllProjectBy();
 	
 //	Page<AccountViewDto> getAllProjectBy(Pageable pageable);

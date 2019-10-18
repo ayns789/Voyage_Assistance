@@ -1,7 +1,6 @@
 package com.project.dtos.user;
 
 import javax.validation.constraints.NotBlank;
-import org.springframework.beans.factory.annotation.Value;
 
 
 public class EmailCreateDto {
@@ -11,7 +10,6 @@ public class EmailCreateDto {
     
     private Long establishmentId;
 
-	@Value("false")
 	private boolean professional;
 	
 	@NotBlank

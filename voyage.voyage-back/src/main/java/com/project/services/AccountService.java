@@ -19,7 +19,5 @@ public interface AccountService {
     void update(Long id, AccountCreateDto account);
 
 	List<AccountViewDto> getAll();
-
-    
-
+	
 }
