@@ -53,7 +53,6 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Override
 	public void create(AccountCreateDto account) {
-		// TODO Auto-generated method stub
 		Account entity = mapper.map(account, Account.class);
 		repo.save(entity);
 //		Account entity = new Account();
@@ -63,7 +62,6 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public AccountCreateDto one(Long id) {
-		// TODO Auto-generated method stub
 		Account entity = repo.findById(id).get();
 		AccountCreateDto account = new AccountCreateDto();
 		account.setFirstName(entity.getFirstName());
@@ -77,14 +75,12 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
 		repo.deleteById(id);
 		
 	}
 
 	@Override
 	public void update(Long id, AccountCreateDto account) {
-		// TODO Auto-generated method stub
 		Account entity = repo.findById(id).get();
 		populateEntity(account, entity);
 		repo.save(entity);
