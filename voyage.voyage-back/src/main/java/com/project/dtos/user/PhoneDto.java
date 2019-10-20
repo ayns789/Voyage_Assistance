@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import com.project.enums.PhoneType;
 
-public class PhoneCreateDto {
+public class PhoneDto {
 	
 	@NotNull
     private Long accountId;
@@ -21,7 +21,7 @@ public class PhoneCreateDto {
 	@Enumerated(EnumType.STRING)
 	private PhoneType phoneType;
 		
-	public PhoneCreateDto() {
+	public PhoneDto() {
 		
 	}
 

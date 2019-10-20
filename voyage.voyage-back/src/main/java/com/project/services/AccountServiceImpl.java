@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.dtos.user.AccountCreateDto;
+import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.entities.Account;
 import com.project.repositories.AccountRepo;
@@ -42,7 +42,7 @@ public class AccountServiceImpl implements AccountService {
 		return repo.getById(id);
 		}
 
-	private void populateEntity(AccountCreateDto account, Account entity) {
+	private void populateEntity(AccountDto account, Account entity) {
 		mapper.map(account, entity);
 //		entity.setFirstName(account.getFirstName());
 //		entity.setLastName(account.getLastName());
@@ -52,7 +52,7 @@ public class AccountServiceImpl implements AccountService {
 	    }
 	
 	@Override
-	public void create(AccountCreateDto account) {
+	public void create(AccountDto account) {
 		Account entity = mapper.map(account, Account.class);
 		repo.save(entity);
 //		Account entity = new Account();
@@ -61,9 +61,9 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public AccountCreateDto one(Long id) {
+	public AccountDto one(Long id) {
 		Account entity = repo.findById(id).get();
-		AccountCreateDto account = new AccountCreateDto();
+		AccountDto account = new AccountDto();
 		account.setFirstName(entity.getFirstName());
 		account.setLastName(entity.getLastName());
 		account.setLogin(entity.getLoginAccount());
@@ -80,7 +80,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void update(Long id, AccountCreateDto account) {
+	public void update(Long id, AccountDto account) {
 		Account entity = repo.findById(id).get();
 		populateEntity(account, entity);
 		repo.save(entity);

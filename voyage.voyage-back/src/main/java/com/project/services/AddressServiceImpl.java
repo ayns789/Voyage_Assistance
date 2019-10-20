@@ -4,8 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.dtos.user.AccountCreateDto;
-import com.project.dtos.user.AddressCreateDto;
+import com.project.dtos.user.AccountDto;
+import com.project.dtos.user.AddressDto;
 import com.project.entities.Account;
 import com.project.entities.Address;
 import com.project.entities.Establishment;
@@ -35,9 +35,9 @@ public class AddressServiceImpl implements AddressService {
 	    }
 	
 	@Override
-	public AddressCreateDto one(Long id) {
+	public AddressDto one(Long id) {
 		Address entity = addressRepo.findById(id).get();
-		AddressCreateDto address = new AddressCreateDto();
+		AddressDto address = new AddressDto();
 		
 //		address.setAccountId(entity.getId());
 //		address.setEstablishmentId(entity.getId());
@@ -49,17 +49,17 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public void updateAddress(Long id, AddressCreateDto address) {
+	public void updateAddress(Long id, AddressDto address) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private void populateEntity(AddressCreateDto address, Address entity) {
+	private void populateEntity(AddressDto address, Address entity) {
 		mapper.map(address, entity);
 	    }
 
 	@Override
-	public void create(AddressCreateDto address) {
+	public void create(AddressDto address) {
 		Account account = accountRepo.getOne(address.getAccountId());
 //		Address entity = mapper.map(address, Address.class);
 		Address entity = new Address();

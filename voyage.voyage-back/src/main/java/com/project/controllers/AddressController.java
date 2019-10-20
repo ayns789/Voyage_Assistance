@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.dtos.user.AddressCreateDto;
+import com.project.dtos.user.AddressDto;
 import com.project.services.AddressService;
 
 @RestController
@@ -21,7 +21,7 @@ public class AddressController {
 	}
 	
 	@PostMapping
-    public void createAddress(@RequestBody @Valid AddressCreateDto address) {
+    public void createAddress(@RequestBody @Valid AddressDto address) {
 	serviceAd.create(address);
     }
 }

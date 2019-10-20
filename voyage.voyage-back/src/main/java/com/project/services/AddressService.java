@@ -1,14 +1,14 @@
 package com.project.services;
 
-import com.project.dtos.user.AccountCreateDto;
-import com.project.dtos.user.AddressCreateDto;
+import com.project.dtos.user.AccountDto;
+import com.project.dtos.user.AddressDto;
 
 public interface AddressService {
 	
-	void create(AddressCreateDto address);
+	void create(AddressDto address);
 	
-	AddressCreateDto one(Long id);
+	AddressDto one(Long id);
 	
-	void updateAddress(Long id, AddressCreateDto address);
+	void updateAddress(Long id, AddressDto address);
 
 }

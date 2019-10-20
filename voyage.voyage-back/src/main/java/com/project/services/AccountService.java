@@ -2,23 +2,23 @@ package com.project.services;
 
 import java.util.List;
 
-import com.project.dtos.user.AccountCreateDto;
+import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
-import com.project.dtos.user.AddressCreateDto;
+import com.project.dtos.user.AddressDto;
 
 
 
 public interface AccountService {
 	
-	void create(AccountCreateDto account);
+	void create(AccountDto account);
 
 	AccountViewDto getOne(Long id);
 
-	AccountCreateDto one(Long id);
+	AccountDto one(Long id);
 	
     void delete(Long id);
 
-    void update(Long id, AccountCreateDto account);
+    void update(Long id, AccountDto account);
 
 	List<AccountViewDto> getAll();
 	

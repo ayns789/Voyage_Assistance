@@ -3,7 +3,7 @@ package com.project.dtos.user;
 import javax.validation.constraints.NotBlank;
 
 
-public class EmailCreateDto {
+public class EmailDto {
 	
 	
     private Long accountId;
@@ -16,7 +16,7 @@ public class EmailCreateDto {
 	private String email;
 
 	
-	public EmailCreateDto() {
+	public EmailDto() {
 		
 	}
 

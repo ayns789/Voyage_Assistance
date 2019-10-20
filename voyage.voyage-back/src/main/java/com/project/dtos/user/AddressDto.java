@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import com.project.entities.Country;
 import com.project.entities.Region;
 
-public class AddressCreateDto {
+public class AddressDto {
 	
 	
     private Long accountId;
@@ -30,7 +30,7 @@ public class AddressCreateDto {
 	
 	private Country country;
 	
-	public AddressCreateDto() {
+	public AddressDto() {
 		
 	}
 

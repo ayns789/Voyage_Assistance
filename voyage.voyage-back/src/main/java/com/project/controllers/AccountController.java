@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.dtos.user.AccountCreateDto;
+import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
-import com.project.dtos.user.AddressCreateDto;
+import com.project.dtos.user.AddressDto;
 import com.project.services.AccountService;
 import com.project.services.AddressService;
 
@@ -37,7 +37,7 @@ public class AccountController {
     }
     
     @PostMapping(value="/adduser")
-    public void createAccount(@RequestBody @Valid AccountCreateDto account) {
+    public void createAccount(@RequestBody @Valid AccountDto account) {
 	service.create(account);
     }
     

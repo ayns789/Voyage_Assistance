@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import com.project.entities.Civility;
 import com.project.entities.Role;
 
-public class AccountCreateDto {
+public class AccountDto {
 	
 	@NotBlank
 	@Length( min = 2, max = 50)
@@ -27,13 +27,13 @@ public class AccountCreateDto {
 	
 	private Civility civility;
 	
-	public AccountCreateDto() {
+	public AccountDto() {
 		
 	}
 	
 	
 
-	public AccountCreateDto(@NotBlank @Length(min = 2, max = 30) String firstName,
+	public AccountDto(@NotBlank @Length(min = 2, max = 30) String firstName,
 		@NotBlank @Length(min = 2, max = 30) String lastName, @Length(min = 6, max = 15) String login,
 		@Length(min = 6, max = 15) String password, Role role, Civility civility) {
 	super();
