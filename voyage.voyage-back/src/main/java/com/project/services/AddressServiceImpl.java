@@ -61,15 +61,15 @@ public class AddressServiceImpl implements AddressService {
 	@Override
 	public void create(AddressCreateDto address) {
 		Account account = accountRepo.getOne(address.getAccountId());
-		Address entity = mapper.map(address, Address.class);
-//		Address entity = new Address();
-//		entity.setAccount(account);
-//		entity.setCityName(address.getCityName());
-//		entity.setStreetNumber(address.getStreetNumber());
-//		entity.setStreetName(address.getStreetName());
-//		entity.setRegion(address.getRegion());
-//		entity.setPostalCode(address.getPostalCode());
-//		entity.setCountry(address.getCountry());
+//		Address entity = mapper.map(address, Address.class);
+		Address entity = new Address();
+		entity.setAccount(account);
+		entity.setCityName(address.getCityName());
+		entity.setStreetNumber(address.getStreetNumber());
+		entity.setStreetName(address.getStreetName());
+		entity.setRegion(address.getRegion());
+		entity.setPostalCode(address.getPostalCode());
+		entity.setCountry(address.getCountry());
 		addressRepo.save(entity);
 	}
 
