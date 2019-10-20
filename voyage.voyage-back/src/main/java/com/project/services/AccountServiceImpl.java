@@ -49,6 +49,7 @@ public class AccountServiceImpl implements AccountService {
 //		entity.setLogin(account.getLogin());
 //		entity.setPassword(account.getPassword());
 //		entity.setCivility(account.getCivility());
+//		entity.setRole(account.getRole());
 	    }
 	
 	@Override
