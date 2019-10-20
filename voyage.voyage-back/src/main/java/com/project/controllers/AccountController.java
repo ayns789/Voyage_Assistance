@@ -35,7 +35,7 @@ public class AccountController {
     @GetMapping("/tous")
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
-	return accounts;
+	return accounts; 
     }
     
     @PostMapping(value="/ajouter")
