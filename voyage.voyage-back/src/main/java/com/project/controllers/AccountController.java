@@ -13,17 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
+import com.project.dtos.user.AddressDto;
 import com.project.services.AccountService;
+import com.project.services.AddressService;
 
 
 @RestController
-@RequestMapping("/compte")
+@RequestMapping("/account")
 public class AccountController {
 	
 	private final AccountService service;
+	
+	private final AddressService serviceAd;
 
-    protected AccountController(AccountService service) {
+    protected AccountController(AccountService service, AddressService serviceAd) {
 	this.service = service;
+	this.serviceAd = serviceAd;
     }
     
     @GetMapping("/{id}")
@@ -32,13 +37,13 @@ public class AccountController {
     }
     
 //    recuperer liste directement d'un dto
-    @GetMapping("/tous")
+    @GetMapping("/all")
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
 	return accounts; 
     }
     
-    @PostMapping(value="/ajouter")
+    @PostMapping(value="/add")
     public void createAccount(@RequestBody @Valid AccountDto account) {
 	service.create(account);
     }
@@ -55,12 +60,10 @@ public class AccountController {
 	service.delete(id);
     }
 
-
-    
-//    @PostMapping("/address")
-//    public void createAddress(@RequestBody @Valid AddressCreateDto address) {
-//	serviceAd.create(address);
-//    }
+    @PostMapping("/address")
+    public void createAddress(@RequestBody @Valid AddressDto address) {
+	serviceAd.create(address);
+    }
     
 
 }

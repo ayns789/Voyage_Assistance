@@ -9,6 +9,8 @@ public interface AddressService {
 	
 	AddressDto one(Long id);
 	
-	void updateAddress(Long id, AddressDto address);
+	void update(Long id, AddressDto address);
+	
+	void delete(Long id);
 
 }

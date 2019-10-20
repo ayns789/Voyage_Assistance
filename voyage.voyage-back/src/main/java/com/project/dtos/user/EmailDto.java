@@ -7,8 +7,6 @@ public class EmailDto {
 	
 	
     private Long accountId;
-    
-    private Long establishmentId;
 
 	private boolean professional;
 	
@@ -42,14 +40,6 @@ public class EmailDto {
 
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
-	}
-
-	public Long getEstablishmentId() {
-		return establishmentId;
-	}
-
-	public void setEstablishmentId(Long establishmentId) {
-		this.establishmentId = establishmentId;
 	}
 
 

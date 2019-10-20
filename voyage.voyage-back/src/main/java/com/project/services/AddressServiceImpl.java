@@ -8,6 +8,7 @@ import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AddressDto;
 import com.project.entities.Account;
 import com.project.entities.Address;
+import com.project.entities.Email;
 import com.project.entities.Establishment;
 import com.project.repositories.AccountRepo;
 import com.project.repositories.AddressRepo;
@@ -39,19 +40,21 @@ public class AddressServiceImpl implements AddressService {
 		Address entity = addressRepo.findById(id).get();
 		AddressDto address = new AddressDto();
 		
-//		address.setAccountId(entity.getId());
+		address.setAccountId(entity.getId());
 //		address.setEstablishmentId(entity.getId());
-//		address.setStreetNumber(entity.getStreetNumber());
-//		address.setStreetName(entity.getStreetName());
-//		address.setCityName(entity.getCityName());
-//		address.setPostalCode(entity.getPostalCode());
+		address.setStreetNumber(entity.getStreetNumber());
+		address.setStreetName(entity.getStreetName());
+		address.setCityName(entity.getCityName());
+		address.setPostalCode(entity.getPostalCode());
 		return address;
 	}
 
 	@Override
-	public void updateAddress(Long id, AddressDto address) {
+	public void update(Long id, AddressDto address) {
 		// TODO Auto-generated method stub
-		
+		Address entity = addressRepo.findById(id).get();
+		populateEntity(address, entity);
+		addressRepo.save(entity);
 	}
 	
 	private void populateEntity(AddressDto address, Address entity) {
@@ -71,6 +74,12 @@ public class AddressServiceImpl implements AddressService {
 		entity.setPostalCode(address.getPostalCode());
 		entity.setCountry(address.getCountry());
 		addressRepo.save(entity);
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		addressRepo.deleteById(id);
 	}
 
 }
