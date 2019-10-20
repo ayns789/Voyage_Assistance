@@ -2,8 +2,6 @@ package com.project.dtos.user;
 
 import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
-
-import com.project.entities.Account;
 import com.project.entities.Country;
 import com.project.entities.Region;
 
@@ -12,8 +10,6 @@ public class AddressCreateDto {
 	
     private Long accountId;
     
-//    private Long establishmentId;
-	
 	@NotBlank
 	@Length( min = 1, max = 5)
 	private String streetNumber;
@@ -36,23 +32,6 @@ public class AddressCreateDto {
 	
 	public AddressCreateDto() {
 		
-	}
-
-
-	public AddressCreateDto(Account account,
-			@NotBlank @Length(min = 1, max = 5) String streetNumber,
-			@NotBlank @Length(min = 3, max = 20) String streetName,
-			@NotBlank @Length(min = 3, max = 20) String cityName, @NotBlank @Length(min = 2, max = 6) String postalCode,
-			Region region, Country country) {
-		super();
-		this.accountId = accountId;
-//		this.establishmentId = establishmentId;
-		this.streetNumber = streetNumber;
-		this.streetName = streetName;
-		this.cityName = cityName;
-		this.postalCode = postalCode;
-		this.region = region;
-		this.country = country;
 	}
 
 
@@ -97,14 +76,6 @@ public class AddressCreateDto {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-
-//	public Long getEstablishmentId() {
-//		return establishmentId;
-//	}
-//
-//	public void setEstablishmentId(Long establishmentId) {
-//		this.establishmentId = establishmentId;
-//	}
 
 	public Region getRegion() {
 		return region;

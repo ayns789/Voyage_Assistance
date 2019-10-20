@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.project.dtos.user.AccountCreateDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.dtos.user.AddressCreateDto;
@@ -39,6 +40,11 @@ public class AccountController {
     public void createAccount(@RequestBody @Valid AccountCreateDto account) {
 	service.create(account);
     }
+    
+//    @PostMapping("/address")
+//    public void createAddress(@RequestBody @Valid AddressCreateDto address) {
+//	serviceAd.create(address);
+//    }
     
 
 }
