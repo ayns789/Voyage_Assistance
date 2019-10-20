@@ -17,7 +17,7 @@ import com.project.services.AccountService;
 
 
 @RestController
-@RequestMapping("/comptes")
+@RequestMapping("/compte")
 public class AccountController {
 	
 	private final AccountService service;
@@ -32,13 +32,13 @@ public class AccountController {
     }
     
 //    recuperer liste directement d'un dto
-    @GetMapping
+    @GetMapping("/tous")
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
 	return accounts;
     }
     
-    @PostMapping(value="/adduser")
+    @PostMapping(value="/ajouter")
     public void createAccount(@RequestBody @Valid AccountDto account) {
 	service.create(account);
     }
