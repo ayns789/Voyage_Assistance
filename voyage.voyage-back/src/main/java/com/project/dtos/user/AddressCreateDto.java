@@ -2,6 +2,8 @@ package com.project.dtos.user;
 
 import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
+
+import com.project.entities.Account;
 import com.project.entities.Country;
 import com.project.entities.Region;
 
@@ -10,7 +12,7 @@ public class AddressCreateDto {
 	
     private Long accountId;
     
-    private Long establishmentId;
+//    private Long establishmentId;
 	
 	@NotBlank
 	@Length( min = 1, max = 5)
@@ -37,14 +39,14 @@ public class AddressCreateDto {
 	}
 
 
-	public AddressCreateDto(Long accountId, Long establishmentId,
+	public AddressCreateDto(Account account,
 			@NotBlank @Length(min = 1, max = 5) String streetNumber,
 			@NotBlank @Length(min = 3, max = 20) String streetName,
 			@NotBlank @Length(min = 3, max = 20) String cityName, @NotBlank @Length(min = 2, max = 6) String postalCode,
 			Region region, Country country) {
 		super();
 		this.accountId = accountId;
-		this.establishmentId = establishmentId;
+//		this.establishmentId = establishmentId;
 		this.streetNumber = streetNumber;
 		this.streetName = streetName;
 		this.cityName = cityName;
@@ -58,9 +60,11 @@ public class AddressCreateDto {
 		return accountId;
 	}
 
+
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
+
 
 	public String getStreetNumber() {
 		return streetNumber;
@@ -94,13 +98,13 @@ public class AddressCreateDto {
 		this.postalCode = postalCode;
 	}
 
-	public Long getEstablishmentId() {
-		return establishmentId;
-	}
-
-	public void setEstablishmentId(Long establishmentId) {
-		this.establishmentId = establishmentId;
-	}
+//	public Long getEstablishmentId() {
+//		return establishmentId;
+//	}
+//
+//	public void setEstablishmentId(Long establishmentId) {
+//		this.establishmentId = establishmentId;
+//	}
 
 	public Region getRegion() {
 		return region;
