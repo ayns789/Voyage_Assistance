@@ -39,13 +39,12 @@ public class Account extends AbstractEntityId {
 	@JoinColumn(nullable=false, name="civility_id")
 	private Civility civility;
 	
-	@OneToMany
-	@JoinColumn(nullable=true, name="phone_id")
+	@OneToOne(mappedBy="account")
+	private Email email;
+	
+	@OneToMany(mappedBy="account")
 	private List<Phone> phones;
 	
-	@OneToOne
-	@JoinColumn(nullable=true, name="email_id")
-	private Email email;
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinTable(
@@ -118,6 +117,15 @@ public class Account extends AbstractEntityId {
 	}
 
 
+	public Civility getCivility() {
+		return civility;
+	}
+
+	public void setCivility(Civility civility) {
+		this.civility = civility;
+	}
+
+
 	public Email getEmail() {
 		return email;
 	}
@@ -127,13 +135,15 @@ public class Account extends AbstractEntityId {
 		this.email = email;
 	}
 
-	public Civility getCivility() {
-		return civility;
+
+	public List<Phone> getPhones() {
+		return phones;
 	}
 
-	public void setCivility(Civility civility) {
-		this.civility = civility;
+
+	public void setPhones(List<Phone> phones) {
+		this.phones = phones;
 	}
-	
+		
 
 }

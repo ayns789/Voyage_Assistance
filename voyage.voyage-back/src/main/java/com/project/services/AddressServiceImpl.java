@@ -3,16 +3,11 @@ package com.project.services;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AddressDto;
 import com.project.entities.Account;
 import com.project.entities.Address;
-import com.project.entities.Email;
-import com.project.entities.Establishment;
 import com.project.repositories.AccountRepo;
 import com.project.repositories.AddressRepo;
-import com.project.repositories.EstablishmentRepo;
 
 @Service
 public class AddressServiceImpl implements AddressService {
@@ -22,16 +17,14 @@ public class AddressServiceImpl implements AddressService {
 	
 	private final AccountRepo accountRepo;
 	
-	private final EstablishmentRepo estaRepo;
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 
-	protected AddressServiceImpl(AddressRepo addressRepo, AccountRepo accountRepo, EstablishmentRepo estaRepo) {
+	protected AddressServiceImpl(AddressRepo addressRepo, AccountRepo accountRepo) {
 		this.addressRepo = addressRepo;
 		this.accountRepo = accountRepo;
-		this.estaRepo = estaRepo;
 		
 	    }
 	

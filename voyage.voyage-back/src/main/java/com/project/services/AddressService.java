@@ -1,6 +1,6 @@
 package com.project.services;
 
-import com.project.dtos.user.AccountDto;
+
 import com.project.dtos.user.AddressDto;
 
 public interface AddressService {

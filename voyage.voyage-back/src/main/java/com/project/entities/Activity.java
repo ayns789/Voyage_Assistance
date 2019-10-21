@@ -22,6 +22,12 @@ public class Activity extends AbstractEntityId {
 	@Length( min = 3, max = 40)
 	private String categoryActivity;
 	
+	@OneToMany(mappedBy="activity")
+	private List<SpecialAttention> specialAttenions;
+	
+	@OneToMany(mappedBy="activity")
+	private List<Media> medias;
+	
 	@OneToMany
 	@JoinTable(
 		       name = "t_establishment_activity",
@@ -54,5 +60,27 @@ public class Activity extends AbstractEntityId {
 	public void setEstablishment(List<Establishment> establishment) {
 		this.establishment = establishment;
 	}
+
+
+	public List<SpecialAttention> getSpecialAttenions() {
+		return specialAttenions;
+	}
+
+
+	public void setSpecialAttenions(List<SpecialAttention> specialAttenions) {
+		this.specialAttenions = specialAttenions;
+	}
+
+
+	public List<Media> getMedias() {
+		return medias;
+	}
+
+
+	public void setMedias(List<Media> medias) {
+		this.medias = medias;
+	}
+	
+
 
 }

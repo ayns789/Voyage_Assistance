@@ -18,6 +18,12 @@ public class Service extends AbstractEntityId {
 	@Column(length=50)
 	private String categoryService;
 	
+	@OneToMany(mappedBy="service")
+	private List<SpecialAttention> specialAttenions;
+	
+	@OneToMany(mappedBy="service")
+	private List<Media> medias;
+	
 	
 	@OneToMany
 	@JoinTable(
@@ -49,5 +55,22 @@ public class Service extends AbstractEntityId {
 	public void setEstablishment(List<Establishment> establishment) {
 		this.establishment = establishment;
 	}
+
+	public List<SpecialAttention> getSpecialAttenions() {
+		return specialAttenions;
+	}
+
+	public void setSpecialAttenions(List<SpecialAttention> specialAttenions) {
+		this.specialAttenions = specialAttenions;
+	}
+
+	public List<Media> getMedias() {
+		return medias;
+	}
+
+	public void setMedias(List<Media> medias) {
+		this.medias = medias;
+	}
+	
 
 }

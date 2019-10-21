@@ -1,6 +1,7 @@
 package com.project.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -11,14 +12,12 @@ public class Role extends AbstractEntityId {
 	
 	private String libRole;
 
-//	@OneToOne
-//    @MapsId
-//    private Account account;
+	@OneToOne(mappedBy="role")
+    private Account account;
 	
 	public Role() {
 		
 	}
-	
 	
 
 	@Override
@@ -36,13 +35,13 @@ public class Role extends AbstractEntityId {
 		this.libRole = libRole;
 	}
 
-//	public Account getAccount() {
-//		return account;
-//	}
-//
-//	public void setAccount(Account account) {
-//		this.account = account;
-//	}
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 	
 	
 

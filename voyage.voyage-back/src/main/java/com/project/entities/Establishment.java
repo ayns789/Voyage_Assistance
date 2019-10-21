@@ -44,6 +44,12 @@ public class Establishment extends AbstractEntityId {
 	    )
 	private List<Activity> activities;
 	
+	@OneToMany(mappedBy="establishment")
+	private List<Email> emails;
+	
+	@OneToMany(mappedBy="establishment")
+	private List<Phone> phones;
+	
 	
 	@OneToMany
 	 @JoinTable(
@@ -124,5 +130,27 @@ public class Establishment extends AbstractEntityId {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
+	public List<Email> getEmails() {
+		return emails;
+	}
+
+
+	public void setEmails(List<Email> emails) {
+		this.emails = emails;
+	}
+
+
+	public List<Phone> getPhones() {
+		return phones;
+	}
+
+
+	public void setPhones(List<Phone> phones) {
+		this.phones = phones;
+	}
+	
+	
 
 }

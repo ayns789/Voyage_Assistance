@@ -31,6 +31,9 @@ public class Email extends AbstractEntityId {
 	@JoinColumn(nullable=true, name="establishment_id")
 	private Establishment establishment;
 	
+	@OneToOne(mappedBy="email")
+	private Contact contact;
+	
 	
 	public Email() {
 		
@@ -67,6 +70,15 @@ public class Email extends AbstractEntityId {
 	public void setEstablishment(Establishment establishment) {
 		this.establishment = establishment;
 	}
+
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+	
 	
 
 }
