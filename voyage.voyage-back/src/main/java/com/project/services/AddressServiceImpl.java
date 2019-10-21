@@ -15,18 +15,30 @@ public class AddressServiceImpl implements AddressService {
 	
 	private final AddressRepo addressRepo;
 	
-	private final AccountRepo accountRepo;
-	
+	private final AccountRepo accountRepo;	
 	
 	@Autowired
 	private ModelMapper mapper;
 	
-
 	protected AddressServiceImpl(AddressRepo addressRepo, AccountRepo accountRepo) {
 		this.addressRepo = addressRepo;
 		this.accountRepo = accountRepo;
 		
 	    }
+	
+	@Override
+	public void create(AddressDto address) {
+		Account account = accountRepo.getOne(address.getAccountId());
+		Address entity = new Address();
+		entity.setAccount(account);
+		entity.setCityName(address.getCityName());
+		entity.setStreetNumber(address.getStreetNumber());
+		entity.setStreetName(address.getStreetName());
+		entity.setRegion(address.getRegion());
+		entity.setPostalCode(address.getPostalCode());
+		entity.setCountry(address.getCountry());
+		addressRepo.save(entity);
+	}	
 	
 	@Override
 	public AddressDto one(Long id) {
@@ -39,9 +51,14 @@ public class AddressServiceImpl implements AddressService {
 		address.setStreetName(entity.getStreetName());
 		address.setCityName(entity.getCityName());
 		address.setPostalCode(entity.getPostalCode());
+		
 		return address;
 	}
 
+	private void populateEntity(AddressDto address, Address entity) {
+		mapper.map(address, entity);
+	}
+	
 	@Override
 	public void update(Long id, AddressDto address) {
 		// TODO Auto-generated method stub
@@ -50,29 +67,9 @@ public class AddressServiceImpl implements AddressService {
 		addressRepo.save(entity);
 	}
 	
-	private void populateEntity(AddressDto address, Address entity) {
-		mapper.map(address, entity);
-	    }
-
-	@Override
-	public void create(AddressDto address) {
-		Account account = accountRepo.getOne(address.getAccountId());
-//		Address entity = mapper.map(address, Address.class);
-		Address entity = new Address();
-		entity.setAccount(account);
-		entity.setCityName(address.getCityName());
-		entity.setStreetNumber(address.getStreetNumber());
-		entity.setStreetName(address.getStreetName());
-		entity.setRegion(address.getRegion());
-		entity.setPostalCode(address.getPostalCode());
-		entity.setCountry(address.getCountry());
-		addressRepo.save(entity);
-	}
-
 	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		addressRepo.deleteById(id);
 	}
-
 }

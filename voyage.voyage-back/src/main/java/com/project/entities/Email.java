@@ -78,7 +78,6 @@ public class Email extends AbstractEntityId {
 	public void setContact(Contact contact) {
 		this.contact = contact;
 	}
-	
-	
+
 
 }

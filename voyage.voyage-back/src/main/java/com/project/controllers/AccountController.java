@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
-import com.project.dtos.user.AddressDto;
 import com.project.services.AccountService;
-import com.project.services.AddressService;
 
 
 @RestController
@@ -24,11 +22,9 @@ public class AccountController {
 	
 	private final AccountService service;
 	
-	private final AddressService serviceAd;
 
-    protected AccountController(AccountService service, AddressService serviceAd) {
+    protected AccountController(AccountService service) {
 	this.service = service;
-	this.serviceAd = serviceAd;
     }
     
     @GetMapping("/{id}")
@@ -58,11 +54,6 @@ public class AccountController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
 	service.delete(id);
-    }
-
-    @PostMapping("/address")
-    public void createAddress(@RequestBody @Valid AddressDto address) {
-	serviceAd.create(address);
     }
     
 
