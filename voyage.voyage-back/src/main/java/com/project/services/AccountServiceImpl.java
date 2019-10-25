@@ -4,11 +4,17 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.project.dtos.user.AccountDto;
+import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.entities.Account;
 import com.project.repositories.AccountRepo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
+
 
 
 @Service
@@ -73,6 +79,15 @@ public class AccountServiceImpl implements AccountService {
 		account.setRole(entity.getRole());
 		return account;
 	}
+	
+	@Override
+    public AccountListDto list(Integer pageNumber) {
+		AccountListDto result = new AccountListDto();
+	Pageable pageable = PageRequest.of(pageNumber, 5, Sort.by(Order.asc("name")));
+	Page<AccountDto> page = repo.list(pageable);
+	result.setAccounts(page.getContent());
+	return result;
+    }
 
 	@Override
 	public void delete(Long id) {

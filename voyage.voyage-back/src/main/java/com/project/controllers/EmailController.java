@@ -22,7 +22,6 @@ public class EmailController {
 		this.service = service;
 	}
 	
-	
 	@GetMapping("/{id}")
     public EmailDto one(@PathVariable("id") Long id) {
 	return service.one(id);

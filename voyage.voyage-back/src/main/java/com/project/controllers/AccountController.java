@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.project.dtos.user.AccountDto;
+import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.services.AccountService;
+
 
 
 @RestController
@@ -27,7 +30,7 @@ public class AccountController {
 	this.service = service;
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public AccountDto one(@PathVariable("id") Long id) {
 	return service.one(id);
     }
@@ -39,19 +42,24 @@ public class AccountController {
 	return accounts; 
     }
     
+    @GetMapping(params = { "page" })
+    public AccountListDto list(@RequestParam("page") Integer page) {
+	return service.list(page);
+    }
+    
     @PostMapping(value="/add")
     public void createAccount(@RequestBody @Valid AccountDto account) {
 	service.create(account);
     }
     
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/modif")
     public void update(@PathVariable("id") Long id,
 	    @RequestBody @Valid AccountDto account) {
 	service.update(id, account);
     }
 
     
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/del")
     public void delete(@PathVariable("id") Long id) {
 	service.delete(id);
     }

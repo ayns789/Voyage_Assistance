@@ -32,17 +32,20 @@ public class AccountDto {
 	}
 	
 	
-//	public AccountDto(@NotBlank @Length(min = 2, max = 30) String firstName,
-//		@NotBlank @Length(min = 2, max = 30) String lastName, @Length(min = 6, max = 15) String login,
-//		@Length(min = 6, max = 15) String password, Role role, Civility civility) {
-//	super();
-//	this.firstName = firstName;
-//	this.lastName = lastName;
-//	this.login = login;
-//	this.password = password;
-//	this.role = role;
-//	this.civility = civility;
-//}
+
+	public AccountDto(@NotBlank @Length(min = 2, max = 50) String firstName,
+			@NotBlank @Length(min = 2, max = 50) String lastName, @NotBlank @Length(min = 6, max = 40) String login,
+			@NotBlank @Length(min = 6, max = 15) String password, Role role, Civility civility) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.login = login;
+		this.password = password;
+		this.role = role;
+		this.civility = civility;
+	}
+
+
 
 	public String getFirstName() {
 		return firstName;
