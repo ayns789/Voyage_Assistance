@@ -42,7 +42,7 @@ public class AccountController {
 	return accounts; 
     }
     
-    @GetMapping(params = { "page" })
+    @GetMapping
     public AccountListDto list(@RequestParam("page") Integer page) {
 	return service.list(page);
     }
