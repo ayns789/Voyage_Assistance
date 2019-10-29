@@ -22,6 +22,6 @@ public interface AccountService {
 
 	List<AccountViewDto> getAll();
 
-	AccountListDto list(Integer page);
+	AccountListDto list(Integer page, Integer size);
 	
 }

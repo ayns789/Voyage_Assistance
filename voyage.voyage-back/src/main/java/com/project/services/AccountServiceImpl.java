@@ -80,9 +80,9 @@ public class AccountServiceImpl implements AccountService {
 	}
 	
 	@Override
-    public AccountListDto list (Integer pageNumber) {
+    public AccountListDto list (Integer pageNumber, Integer size) {
 		AccountListDto result = new AccountListDto();
-		Pageable pageable = PageRequest.of(pageNumber, 5, Sort.by("id"));
+		Pageable pageable = PageRequest.of(pageNumber, size, Sort.by("firstName"));
 		Page<AccountDto> page = repo.list(pageable);
 		result.setAccounts(page.getContent());
 		return result;

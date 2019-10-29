@@ -27,7 +27,7 @@ public interface AccountRepo extends JpaRepository<Account, Long>{
 //	Page<AccountViewDto> getAllProjectBy(Pageable pageable);
 	
 	@Query("select new com.project.dtos.user.AccountDto "
-		    + " (a.firstName, a.lastName, a.login, a.password, a.role, a.civility) " + " from Account a ")
+		    + " ( a.firstName, a.lastName, a.login, a.password, a.role, a.civility) " + " from Account a ")
 	    Page<AccountDto> list(Pageable pageable);
 	
 	

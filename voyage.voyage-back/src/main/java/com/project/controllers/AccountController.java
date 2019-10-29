@@ -43,9 +43,9 @@ public class AccountController {
     }
     
     // (params = { "page"})
-    @GetMapping(value="/addall",params = { "page"})
-    public AccountListDto list(@RequestParam("page") Integer page) {
-	return service.list(page);
+    @GetMapping(value="/addall", params = { "page" , "size"})
+    public AccountListDto list(@RequestParam("page") Integer page , @RequestParam("size") Integer size) {
+	return service.list(page, size);
     }
     
     @PostMapping(value="/add")
