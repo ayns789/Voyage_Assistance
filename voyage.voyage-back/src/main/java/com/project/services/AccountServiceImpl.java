@@ -3,17 +3,16 @@ package com.project.services;
 import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.entities.Account;
 import com.project.repositories.AccountRepo;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 
 
 
@@ -73,20 +72,20 @@ public class AccountServiceImpl implements AccountService {
 		AccountDto account = new AccountDto();
 		account.setFirstName(entity.getFirstName());
 		account.setLastName(entity.getLastName());
-		account.setLogin(entity.getLoginAccount());
-		account.setPassword(entity.getPasswordAccount());
+		account.setLogin(entity.getLogin());
+		account.setPassword(entity.getPassword());
 		account.setCivility(entity.getCivility());
 		account.setRole(entity.getRole());
 		return account;
 	}
 	
 	@Override
-    public AccountListDto list(Integer pageNumber) {
+    public AccountListDto list (Integer pageNumber) {
 		AccountListDto result = new AccountListDto();
-	Pageable pageable = PageRequest.of(pageNumber, 5, Sort.by(Order.asc("name")));
-	Page<AccountDto> page = repo.list(pageable);
-	result.setAccounts(page.getContent());
-	return result;
+		Pageable pageable = PageRequest.of(pageNumber, 5, Sort.by("id"));
+		Page<AccountDto> page = repo.list(pageable);
+		result.setAccounts(page.getContent());
+		return result;
     }
 
 	@Override
@@ -101,6 +100,7 @@ public class AccountServiceImpl implements AccountService {
 		populateEntity(account, entity);
 		repo.save(entity);
 	}
+
 	
 	
 }

@@ -1,8 +1,12 @@
 package com.project.entities;
 
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -15,8 +19,8 @@ public class Civility extends AbstractEntityId {
 	@NotBlank
 	private String libCivility;
 	
-	@OneToOne(mappedBy="civility")
-    private Account account;
+	@OneToMany(mappedBy="civility", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
+    private List<Account> account;
 	
 	public Civility() {
 		
@@ -30,13 +34,22 @@ public class Civility extends AbstractEntityId {
 		this.libCivility = libCivility;
 	}
 
-	public Account getAccount() {
+	public List<Account> getAccount() {
 		return account;
 	}
 
-	public void setAccount(Account account) {
+	public void setAccount(List<Account> account) {
 		this.account = account;
 	}
+
+	
+//	public Account getAccount() {
+//		return account;
+//	}
+//
+//	public void setAccount(Account account) {
+//		this.account = account;
+//	}
 	
 
 }

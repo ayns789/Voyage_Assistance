@@ -7,6 +7,8 @@ public interface AccountViewDto {
 	String getFirstName();
 	
 	String getLastName();
+	
+
 
 
 }

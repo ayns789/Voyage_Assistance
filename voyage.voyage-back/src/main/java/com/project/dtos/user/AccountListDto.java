@@ -18,5 +18,4 @@ public class AccountListDto {
 		this.accounts = accounts;
 	}
 
-
 }

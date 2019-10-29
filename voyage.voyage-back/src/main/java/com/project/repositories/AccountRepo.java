@@ -10,7 +10,6 @@ import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.entities.Account;
 
-
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Long>{
 
@@ -20,11 +19,15 @@ public interface AccountRepo extends JpaRepository<Account, Long>{
 
 	List<AccountViewDto> getAllProjectBy();
 
+	// pour pagination dynamique suivie dans AccountRepoImpl
+//	List<AccountDto> findPageResultsByAccountId(long id, int offset, int limit);
+	
+	
 	
 //	Page<AccountViewDto> getAllProjectBy(Pageable pageable);
 	
 	@Query("select new com.project.dtos.user.AccountDto "
-		    + " (a.firstName, a.lastName, a.loginAccount, a.passwordAccount, a.role, a.civility) " + " from Account a ")
+		    + " (a.firstName, a.lastName, a.login, a.password, a.role, a.civility) " + " from Account a ")
 	    Page<AccountDto> list(Pageable pageable);
 	
 	

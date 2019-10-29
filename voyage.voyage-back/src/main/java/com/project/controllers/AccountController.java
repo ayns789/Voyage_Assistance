@@ -35,14 +35,15 @@ public class AccountController {
 	return service.one(id);
     }
     
-//    recuperer liste directement d'un dto
+////    recuperer liste directement d'un ViewDto
     @GetMapping("/all")
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
 	return accounts; 
     }
     
-    @GetMapping
+    // (params = { "page"})
+    @GetMapping(value="/addall",params = { "page"})
     public AccountListDto list(@RequestParam("page") Integer page) {
 	return service.list(page);
     }

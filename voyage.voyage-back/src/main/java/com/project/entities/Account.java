@@ -3,9 +3,11 @@ package com.project.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -22,20 +24,20 @@ public class Account extends AbstractEntityId {
 	
 	private String lastName;
 	
+	@Column(name="login_account")
+	private String login;
 	
-	private String loginAccount;
-	
-	
-	private String passwordAccount;
+	@Column(name="password_account")
+	private String password;
 	
 
 //	(name = "code_role", referencedColumnName = "code_role")
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(nullable=false, name="role_id")
 	private Role role;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(nullable=false, name="civility_id")
 	private Civility civility;
 	
@@ -76,24 +78,23 @@ public class Account extends AbstractEntityId {
 		this.lastName = lastName;
 	}
 
-
-	public String getLoginAccount() {
-		return loginAccount;
+	public String getLogin() {
+		return login;
 	}
 
 
-	public void setLoginAccount(String loginAccount) {
-		this.loginAccount = loginAccount;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 
-	public String getPasswordAccount() {
-		return passwordAccount;
+	public String getPassword() {
+		return password;
 	}
 
 
-	public void setPasswordAccount(String passwordAccount) {
-		this.passwordAccount = passwordAccount;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
