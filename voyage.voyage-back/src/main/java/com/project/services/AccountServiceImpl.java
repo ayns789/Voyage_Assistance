@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountListDto;
@@ -82,7 +81,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
     public AccountListDto list (Integer pageNumber, Integer size) {
 		AccountListDto result = new AccountListDto();
-		Pageable pageable = PageRequest.of(pageNumber, size, Sort.by("firstName"));
+		Pageable pageable = PageRequest.of(pageNumber, size);
 		Page<AccountDto> page = repo.list(pageable);
 		result.setAccounts(page.getContent());
 		return result;
@@ -100,6 +99,7 @@ public class AccountServiceImpl implements AccountService {
 		populateEntity(account, entity);
 		repo.save(entity);
 	}
+	 
 	
 	
 }
