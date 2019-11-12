@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name="t_account")
@@ -36,10 +38,12 @@ public class Account extends AbstractEntityId {
 	
 	@ManyToOne
 	@JoinColumn(nullable=false, name="role_id")
+	@JsonIgnore
 	private Role role;
 	
 	@ManyToOne
 	@JoinColumn(nullable=false, name="civility_id")
+	@JsonIgnore
 	private Civility civility;
 	
 	@OneToOne(mappedBy="account")

@@ -17,7 +17,7 @@ public interface AccountRepo extends JpaRepository<Account, Long>{
 //	se servir d'un DTO pour afficher les infos que l'on souhaite
 	AccountViewDto getById(Long id);
 
-	List<AccountViewDto> getAllProjectBy();
+	List<AccountViewDto> getAllAccountBy();
 
 	// pour pagination dynamique suivie dans AccountRepoImpl
 //	List<AccountDto> findPageResultsByAccountId(long id, int offset, int limit);

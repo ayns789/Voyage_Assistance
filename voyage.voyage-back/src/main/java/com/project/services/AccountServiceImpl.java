@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
@@ -41,7 +39,7 @@ public class AccountServiceImpl implements AccountService {
 //	pour se servir du dto direct pour un get ( voir AccountRepo et AccountViewDto )
 	@Override
 	public List<AccountViewDto> getAll() {
-		return repo.getAllProjectBy();
+		return repo.getAllAccountBy();
 	}
 	
 	@Override
@@ -102,29 +100,6 @@ public class AccountServiceImpl implements AccountService {
 		populateEntity(account, entity);
 		repo.save(entity);
 	}
-
-
-	@Override
-	public Page<?> rechercher(String[] critères, PageRequest pageRequest, String[] codesAcces) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-//	@Transactional(readOnly = true)
-//    @Override
-//    public Page<AccountListDto> findBySearchTerm(String searchTerm) {
-//        Pageable pageRequest = createPageRequest();
-//          
-//        //Obtain search results by invoking the preferred repository method.
-//        Page<Account> searchResultPage = ...
-//        // repo.list(pageable);
-//          
-//        return TodoMapper.mapEntityPageIntoDTOPage(pageRequest, searchResultPage);
-//    }
-//      
-//	private Pageable createPageRequest() {
-//	    return new PageRequest(0, 10);
-//	}
 	
 	
 }

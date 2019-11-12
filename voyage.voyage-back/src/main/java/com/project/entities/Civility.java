@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="t_civility")
 public class Civility extends AbstractEntityId {
@@ -20,6 +22,7 @@ public class Civility extends AbstractEntityId {
 	private String libCivility;
 	
 	@OneToMany(mappedBy="civility", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
+	@JsonIgnore
     private List<Account> account;
 	
 	public Civility() {

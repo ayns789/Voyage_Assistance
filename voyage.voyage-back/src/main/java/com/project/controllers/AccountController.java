@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.project.dtos.user.AccountDto;
+import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.services.AccountService;
 
@@ -42,12 +43,18 @@ public class AccountController {
 	return accounts; 
     }
     
+//    // recupere liste avec parametres de pagination
+//    @GetMapping(value="/addall", params = { "page" , "size"})
+//    public Page list(@RequestParam("page") Integer page , @RequestParam("size") Integer size) {
+////	return service.list(page, size);
+//    	Page results = (Page) service.list(page, size);
+//    	return results;
+//    }
+    
     // recupere liste avec parametres de pagination
-    @GetMapping(value="/addall", params = { "page" , "size"})
-    public Page<?> list(@RequestParam("page") Integer page , @RequestParam("size") Integer size) {
-//	return service.list(page, size);
-    	Page<?> results = (Page<?>) service.list(page, size);
-    	return results;
+    @GetMapping(value="/addall")
+    public AccountListDto list(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
+	return service.list(page, size);
     }
     
     @PostMapping(value="/add")

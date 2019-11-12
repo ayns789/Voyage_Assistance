@@ -2,6 +2,7 @@ package com.project.dtos.user;
 
 import java.util.List;
 
+
 public class AccountListDto {
 	
 	private List<AccountDto> accounts;

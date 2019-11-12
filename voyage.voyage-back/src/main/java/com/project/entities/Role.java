@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name="t_role")
@@ -17,6 +19,7 @@ public class Role extends AbstractEntityId {
 	private String libRole;
 
 	@OneToMany(mappedBy="role", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
+	@JsonIgnore
     private List<Account> account;
 	
 	public Role() {
