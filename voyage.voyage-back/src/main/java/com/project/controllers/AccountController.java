@@ -1,6 +1,5 @@
 package com.project.controllers;
 
-
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +15,6 @@ import com.project.dtos.user.AccountDto;
 import com.project.dtos.user.AccountListDto;
 import com.project.dtos.user.AccountViewDto;
 import com.project.services.AccountService;
-
 
 
 @RestController
