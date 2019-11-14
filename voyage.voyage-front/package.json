@@ -1,0 +1,52 @@
+{
+  "name": "voyage.voyage-front",
+  "version": "1.0.0",
+  "description": "Typescript - jest - enzyme - parcel - react - react router - less",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest",
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test-shim.js",
+      "./test-setup.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./test-preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdanneville/cproj-front.git"
+  },
+  "author": "Quentin Danneville",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qdanneville/cproj-front/issues"
+  },
+  "homepage": "https://github.com/qdanneville/cproj-front#readme",
+  "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.22",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^24.9.0",
+    "less": "^3.10.3",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-test-renderer": "^16.11.0",
+    "typescript": "^3.7.2"
+  }
+}
