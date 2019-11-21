@@ -1,6 +1,11 @@
 import * as React from "react";
 
 import { Redirect } from "react-router-dom";
+import { Container, Col, Form,
+  FormGroup, Label, Input,
+  Button } from 'reactstrap';
+import "../../less/components/login.less";
+
 
 //Typescript
 interface Props {
@@ -65,16 +70,53 @@ class Login extends React.Component<Props, State> {
     }
 
     return (
+      // <React.Fragment>
+      //   <h1>{this.props.title}</h1>
+      //   <form onSubmit={this.handleSubmit}>
+      //     <label><font color="white">email :</font></label>
+      //     <input name="email" />
+      //     <label><font color="white">Password :</font></label>
+      //     <input name="password" />
+      //     <button>Se connecter</button>
+      //   </form>
+      // </React.Fragment>
+
       <React.Fragment>
-        <h1>{this.props.title}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>email :</label>
-          <input name="email" />
-          <label>Password :</label>
-          <input name="password" />
-          <button>Se connecter</button>
-        </form>
+      <Container className="Login">
+        <h2>Connectez vous</h2>
+        <Form className="form">
+        <div id="text">
+          <Col>
+            <FormGroup>
+              <Label>Email</Label>
+              <Input
+                type="email"
+                name="email"
+                id="exampleEmail"
+                placeholder="myemail@email.com"
+              />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label for="examplePassword">Password</Label>
+              <Input
+                type="password"
+                name="password"
+                id="examplePassword"
+                placeholder="********"
+              />
+            </FormGroup>
+          </Col>
+          </div>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
       </React.Fragment>
+
+      
+
+
     );
   }
 }

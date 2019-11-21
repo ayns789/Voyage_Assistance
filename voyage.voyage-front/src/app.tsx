@@ -7,9 +7,13 @@ import Home from "./js/pages/home";
 
 //Components
 import Header from "./js/components/header";
+// import Navbar from "./js/components/navbar";
 import Navbar from "./js/components/navbar";
 
-import { myArray } from "./js/pages/home";
+// reactstrap :
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import { myArray } from "./js/pages/home";
 
 class App extends React.Component {
   componentDidMount() {
@@ -22,20 +26,31 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Header />
         <Navbar />
+        <Header />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+
         <main className="main-wrapper">
           <Switch>
             <Route path="/login">
-              <Login title="My super login page" isLoaded={false} />
+
+            {/* <font color="white"> */}
+              <Login isLoaded={false} />
+              {/* <Login title="My super login page" isLoaded={false} /> */}
+              {/* </font> */}
             </Route>
             <Route path="/">
               <Home />
             </Route>
           </Switch>
         </main>
+        {/* <React.Fragment>
+        <Switch>
+          <Route path="/login" component={ Login title="My super login page" isLoaded={false}} />
+          <Route path="/" component={ Home } />
+        </Switch>
+      </React.Fragment> */}
       </Router>
     );
   }

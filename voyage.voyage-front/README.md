@@ -23,7 +23,29 @@ root
       ├── package-lock.json 
       ├── node_modules
       ├── src (localhost:1234)
-      │   └── index.js
+      │   ├── _tests_
+      │   │   └── app.spec.tsx
+      │   ├── assets
+      │   │   └── 
+      │   ├── js
+      │   │   ├── components
+      │   │   │   ├── header.tsx
+      │   │   │   └── navbar.tsx
+      │   │   └── pages
+      │   │       ├── home.tsx
+      │   │       ├── login.tsx
+      │   │       └── register.jsx
+      │   ├── less
+      │   │   ├── components
+      │   │   │   ├── header.less
+      │   │   │   ├── main.less
+      │   │   │   ├── navbar.less
+      │   │   │   └── pages.less
+      │   │   └── vender
+      │   │       └── style.less
+      │   ├── index.tsx
+      │   ├── index.html
+      │   └── app.tsx
       ├── .gitignore
       └── README.md
 
