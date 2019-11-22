@@ -82,6 +82,7 @@ class Login extends React.Component<Props, State> {
       // </React.Fragment>
 
       <React.Fragment>
+        <section className="my-5 mr-5 ml-5">
       <Container className="Login">
         <h2>Connectez vous</h2>
         <Form className="form">
@@ -112,6 +113,7 @@ class Login extends React.Component<Props, State> {
           <Button>Submit</Button>
         </Form>
       </Container>
+      </section>
       </React.Fragment>
 
       

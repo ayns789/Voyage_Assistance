@@ -1,6 +1,6 @@
 
 import React from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavLink, MDBCollapse, MDBNavItem,  MDBContainer, MDBMask, MDBView, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem,  MDBContainer, MDBMask, MDBView, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import "../../less/components/navbar.less";
 // MDBNavLink,
@@ -24,33 +24,38 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 //   réglage position onglets :
 //   className="white-text mr-4  pt-6 pb-6">
 
+// couleurs sympa de navbar :
+// indigo, peach-gradient, purple-gradient, aqua-gradient, blue-gradient
+
   render() {
     return (
       <div>
         <header>
-            <MDBNavbar color="indigo" dark expand="md" fixed="top">
+            <MDBNavbar color="blue-gradient" dark expand="md" fixed="top">
               <MDBNavbarBrand href="/">
-                <strong>Voyage Assistance</strong>
+              <img src="https://i.ibb.co/5WzzW03/logo2.png" className="img-fluid" height="50" width="50" alt="logo" id="logo"/>
+              {/* height="50" width="50"  */}
+              {/* <img src="https://i.ibb.co/5WzzW03/logo2.png" alt="logo2" border="0"></img> */}
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               {/* ou pour réglage menu hamburger :
                <MDBHamburgerToggler color="black" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> */}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
+                <MDBNavbarNav left className="md-pills pills-secondary">
                   <MDBNavItem active>
-                    <Link to="/" className="white-text mr-3  pt-6 pb-6">Accueil</Link>
+                    <Link to="/" className="white-text ml-5 mr-5 pt-6 pb-6 md-pills pills-secondary"><strong>Accueil</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Link to="/sejours" className="white-text mr-3 pt-6 pb-6">Séjours</Link>
+                    <Link to="/sejours" className="white-text mr-5 pt-6 pb-6"><strong>Séjours</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Link to="/services" className="white-text mr-3 pt-6 pb-6">Services</Link>
+                    <Link to="/services" className="white-text mr-5 pt-6 pb-6"><strong>Services</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Link to="/activites" className="white-text mr-3 pt-6 pb-6">Activités</Link>
+                    <Link to="/activites" className="white-text mr-5 pt-6 pb-6"><strong>Activités</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Link to="/contact" className="white-text mr-3 pt-6 pb-6">Contact</Link>
+                    <Link to="/contact" className="white-text mr-5 pt-6 pb-6"><strong>Contact</strong></Link>
                   </MDBNavItem>
                   </MDBNavbarNav>
                   <MDBNavbarNav right>
@@ -61,9 +66,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                  </MDBDropdownToggle>
                  <MDBDropdownMenu className="dropdown-default">
                  <MDBDropdownItem><Link to="/login" className="dark-text mr-3 pt-6 pb-6">Mon compte</Link></MDBDropdownItem>
-                   <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                   <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                   <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                   <MDBDropdownItem href="#!" className="dark-text center-text">Espace membre</MDBDropdownItem>
                  </MDBDropdownMenu>
                </MDBDropdown>
              </MDBNavItem>

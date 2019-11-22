@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //Pages
 import Login from "./js/pages/login";
 import Home from "./js/pages/home";
+import Contact from "./js/pages/contact";
+import Footer from "./js/components/footer";
 
 //Components
 import Header from "./js/components/header";
@@ -43,6 +45,9 @@ class App extends React.Component {
             <Route path="/">
               <Home />
             </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
           </Switch>
         </main>
         {/* <React.Fragment>
@@ -51,6 +56,7 @@ class App extends React.Component {
           <Route path="/" component={ Home } />
         </Switch>
       </React.Fragment> */}
+      <Footer />
       </Router>
     );
   }
