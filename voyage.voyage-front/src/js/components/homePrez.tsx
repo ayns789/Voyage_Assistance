@@ -1,6 +1,6 @@
 import * as React from "react";
 import { func } from "prop-types";
-import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge } from "mdbreact";
+import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge, MDBAnimation } from "mdbreact";
 
 
 class homePrez extends React.Component {
@@ -16,7 +16,10 @@ class homePrez extends React.Component {
             <MDBCol lg="7">
             <MDBRow className="mb-3">
             <MDBCol>
-    <img src="https://i.ibb.co/5WzzW03/logo2.png" alt="logo" className="img-thumbnail" />
+            <MDBAnimation type="bounce" infinite>
+            <img className="img-fluid img-thumbnail" alt="" src="https://i.ibb.co/5WzzW03/logo2.png" />
+        </MDBAnimation>
+    {/* <img src="https://i.ibb.co/5WzzW03/logo2.png" alt="logo" className="img-thumbnail" /> */}
   </MDBCol>
               {/* <MDBCol md="1" size="2">
                 {/* <MDBIcon icon="book" size="2x" className="cyan-text" /> */}
@@ -73,9 +76,6 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
                 </p>
               </MDBCol>
             </MDBRow>
@@ -93,18 +93,16 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
                 </p>
               </MDBCol>
             </MDBRow>
           </MDBCol>
           <MDBCol lg="5">
             <img
-              src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
+              // src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
+              src="https://i.ibb.co/5WzzW03/logo2.png"
               alt=""
-              className="img-fluid rounded z-depth-1"
+              className="img-fluid rounded z-depth-2"
             />
           </MDBCol>
         </MDBRow>

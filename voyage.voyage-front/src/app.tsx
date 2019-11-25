@@ -6,6 +6,7 @@ import Login from "./js/pages/login";
 import Home from "./js/pages/home";
 import ContactPage from "./js/pages/contact";
 import Footer from "./js/components/footer";
+import Sejour from "./js/pages/sejours";
 
 //Components
 import Header from "./js/components/header";
@@ -38,6 +39,9 @@ class App extends React.Component {
             </Route>
             <Route path="/contact">
               <ContactPage />
+            </Route>
+            <Route path="/sejours">
+              <Sejour />
             </Route>
             <Route path="/">
               <Home />

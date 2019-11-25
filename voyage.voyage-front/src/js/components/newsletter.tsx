@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon,  } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from "mdbreact";
 
 const subscribeNews = () => {
   return (
@@ -9,7 +9,7 @@ const subscribeNews = () => {
       <MDBRow>
         <MDBCol md="12">
           <form>
-            <h2 className="h2 text-center py-4">Recevez les dernières offres de séjours</h2>
+            <h2 className="h2 text-center py-4 deep-purple-text">Recevez les dernières offres de séjours</h2>
             <label
               htmlFor="defaultFormCardNameEx"
               className="grey-text font-weight-light"

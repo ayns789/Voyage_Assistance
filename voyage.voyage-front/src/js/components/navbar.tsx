@@ -6,6 +6,7 @@ import "../../less/components/navbar.less";
 // MDBNavLink,
 
 class FullPageIntroWithFixedNavbar extends React.Component {
+  state: { collapse: boolean; isWideEnough: boolean; };
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +20,9 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     this.setState({
       collapse: !this.state.collapse
     });
+  }
+  setState(arg0: { collapse: boolean; }) {
+    throw new Error("Method not implemented.");
   }
 
 //   réglage position onglets :

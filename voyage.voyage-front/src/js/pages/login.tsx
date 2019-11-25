@@ -1,10 +1,22 @@
 import * as React from "react";
 
 import { Redirect } from "react-router-dom";
-import { Container, Col, Form,
-  FormGroup, Label, Input,
-  Button } from 'reactstrap';
+// import { Container, Col, Form,
+//   FormGroup, Label, Input,
+//   Button } from 'reactstrap';
 import "../../less/components/login.less";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBModalFooter,
+  MDBIcon,
+  MDBCardHeader,
+  MDBBtn,
+  MDBInput
+} from "mdbreact";
 
 
 //Typescript
@@ -21,6 +33,7 @@ interface State {
 }
 
 class Login extends React.Component<Props, State> {
+  state: { email: string; password: string; user: {}; userIsDefined: boolean; };
   constructor(props) {
     super(props);
 
@@ -57,6 +70,9 @@ class Login extends React.Component<Props, State> {
       });
     });
   }
+  setState(arg0: { user: any; userIsDefined: boolean; }) {
+    throw new Error("Method not implemented.");
+  }
 
   render() {
     if (this.state.userIsDefined) {
@@ -82,7 +98,7 @@ class Login extends React.Component<Props, State> {
       // </React.Fragment>
 
       <React.Fragment>
-        <section className="my-5 mr-5 ml-5">
+        {/* <section className="my-5 mr-5 ml-5">
       <Container className="Login">
         <h2>Connectez vous</h2>
         <Form className="form">
@@ -113,7 +129,62 @@ class Login extends React.Component<Props, State> {
           <Button>Submit</Button>
         </Form>
       </Container>
-      </section>
+      </section> */}
+      <section className="my-5">
+    <MDBContainer className="Login">
+      <MDBRow>
+        <MDBCol md="12">
+          <MDBCard>
+            <MDBCardBody>
+              <MDBCardHeader className="form-header deep-blue-gradient rounded">
+                <h3 className="my-3">
+                  <MDBIcon icon="lock" /> Login:
+                </h3>
+              </MDBCardHeader>
+              <form>
+                <div className="grey-text">
+                  <MDBInput
+                    label="Type your email"
+                    icon="envelope"
+                    group
+                    type="email"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    label="Type your password"
+                    icon="lock"
+                    group
+                    type="password"
+                    validate
+                  />
+                </div>
+
+              <div className="text-center mt-4">
+                <MDBBtn
+                  color="light-blue"
+                  className="mb-3"
+                  type="submit"
+                >
+                  Login
+                </MDBBtn>
+              </div>
+              </form>
+              <MDBModalFooter>
+                <div className="font-weight-light">
+                  <p>Not a member? Sign Up</p>
+                  <p>Forgot Password?</p>
+                </div>
+              </MDBModalFooter>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+    </section>
+  );
+};
       </React.Fragment>
 
       

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import Prez from "../components/homePrez";
 import Redire from "../components/homeRedirections";
 import Sub from "../components/newsletter";
