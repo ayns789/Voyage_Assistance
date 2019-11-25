@@ -4,23 +4,21 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //Pages
 import Login from "./js/pages/login";
 import Home from "./js/pages/home";
-import Contact from "./js/pages/contact";
+import ContactPage from "./js/pages/contact";
 import Footer from "./js/components/footer";
 
 //Components
 import Header from "./js/components/header";
-// import Navbar from "./js/components/navbar";
 import Navbar from "./js/components/navbar";
 
 // reactstrap :
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { myArray } from "./js/pages/home";
 
 class App extends React.Component {
   componentDidMount() {
     let userFromStorage = window.localStorage.getItem("user");
-    console.log("user from local storage ", userFromStorage);
+    console.log("user from local storage", userFromStorage);
 
     window.localStorage.clear();
   }
@@ -36,17 +34,13 @@ class App extends React.Component {
         <main className="main-wrapper">
           <Switch>
             <Route path="/login">
-
-            {/* <font color="white"> */}
               <Login isLoaded={false} />
-              {/* <Login title="My super login page" isLoaded={false} /> */}
-              {/* </font> */}
+            </Route>
+            <Route path="/contact">
+              <ContactPage />
             </Route>
             <Route path="/">
               <Home />
-            </Route>
-            <Route path="/contact">
-              <Contact />
             </Route>
           </Switch>
         </main>

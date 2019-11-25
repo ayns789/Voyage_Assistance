@@ -1,9 +1,9 @@
 import * as React from "react";
-import { func } from "prop-types";
-import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge } from "mdbreact";
-import Prez from "../components/prezSociete";
+import Prez from "../components/homePrez";
 import Redire from "../components/homeRedirections";
 import Sub from "../components/newsletter";
+// import "../../less/components/main.less";
+
 
 class Home extends React.Component {
   render() {

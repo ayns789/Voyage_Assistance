@@ -2,11 +2,12 @@ import * as React from "react";
 import { func } from "prop-types";
 import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge } from "mdbreact";
 
-class prezSociete extends React.Component {
+
+class homePrez extends React.Component {
   render() {
     return(
     <section className="my-5 mr-5 ml-5">
-        <h2 className="h1-responsive font-weight-bold text-center my-5">
+        <h2 className="h1-responsive font-weight-bold text-center my-5 deep-purple-text">
           Notre société
         </h2>
 
@@ -113,4 +114,4 @@ class prezSociete extends React.Component {
 }
 
 
-export default prezSociete;
+export default homePrez;

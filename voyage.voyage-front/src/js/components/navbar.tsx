@@ -1,7 +1,7 @@
 
 import React from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem,  MDBContainer, MDBMask, MDBView, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import "../../less/components/navbar.less";
 // MDBNavLink,
 
@@ -43,7 +43,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left className="md-pills pills-secondary">
                   <MDBNavItem active>
-                    <Link to="/" className="white-text ml-5 mr-5 pt-6 pb-6 md-pills pills-secondary"><strong>Accueil</strong></Link>
+                    <Link to="/" className="white-text mr-5 pt-6 pb-6 md-pills pills-secondary"><strong>Accueil</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     <Link to="/sejours" className="white-text mr-5 pt-6 pb-6"><strong>Séjours</strong></Link>
@@ -65,8 +65,8 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                    <MDBIcon icon="user" />
                  </MDBDropdownToggle>
                  <MDBDropdownMenu className="dropdown-default">
-                 <MDBDropdownItem><Link to="/login" className="dark-text mr-3 pt-6 pb-6">Mon compte</Link></MDBDropdownItem>
-                   <MDBDropdownItem href="#!" className="dark-text center-text">Espace membre</MDBDropdownItem>
+                 <MDBDropdownItem><Link to="/login" className="dark-text center-text">Mon compte</Link></MDBDropdownItem>
+                   <MDBDropdownItem><Link to="/espamembre" className="dark-text center-text">Espace membre</Link></MDBDropdownItem>
                  </MDBDropdownMenu>
                </MDBDropdown>
              </MDBNavItem>

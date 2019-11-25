@@ -4,7 +4,7 @@ import {  MDBRow, MDBCol, MDBCard, MDBIcon, MDBBtn  } from "mdbreact";
 const homeRedirections = () => {
   return (
     <section className='text-center my-5 mr-5 ml-5'>
-      <h2 className='h1-responsive font-weight-bold my-5'>Découvrez nos offres</h2>
+      <h2 className='h1-responsive font-weight-bold my-5 deep-purple-text'>Découvrez nos offres</h2>
 
       <MDBRow>
         <MDBCol md='12' className='mb-4'>
@@ -16,7 +16,7 @@ const homeRedirections = () => {
             }}
           >
             <div className='text-white text-center d-flex flex-column align-items-center rgba-black-strong py-5 px-4 rounded'>
-              <h6 className='purple-text'>
+              <h6 className='cyan-text'>
                 <MDBIcon icon='plane' />
                 <strong> Voyageons</strong>
               </h6>
@@ -29,7 +29,7 @@ const homeRedirections = () => {
                 officia accusamus minus error nisi architecto nulla ipsum
                 dignissimos. Odit sed qui, dolorum!
               </p>
-              <MDBBtn color='secondary' roundedsize='md'>
+              <MDBBtn color='default' roundedsize='md'>
                 <MDBIcon far icon='clone' className='left' /> Voir les séjours
               </MDBBtn>
             </div>

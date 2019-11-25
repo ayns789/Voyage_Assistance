@@ -1,13 +1,14 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput } from "mdbreact";
 
-const contact = () => {
+const contactSub = () => {
   return (
+    
     <MDBContainer>
       <MDBRow>
-        <MDBCol md="6">
+        <MDBCol md="12">
           <form>
-            <p className="h5 text-center mb-4">Contactez nous</p>
+            <h2 className="h2 text-center py-4">Contactez nous</h2>
             <div className="grey-text">
               <MDBInput
                 label="Votre nom"
@@ -52,7 +53,9 @@ const contact = () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    
+    
   );
 };
 
-export default contact;
+export default contactSub;
