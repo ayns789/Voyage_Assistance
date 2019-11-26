@@ -29,7 +29,7 @@ const homeRedirections = () => {
                 officia accusamus minus error nisi architecto nulla ipsum
                 dignissimos. Odit sed qui, dolorum!
               </p>
-              <MDBBtn color='default' roundedsize='md'>
+              <MDBBtn color='default'  className="rounded-pill">
                 <MDBIcon far icon='clone' className='left' /> Voir les séjours
               </MDBBtn>
             </div>
@@ -58,7 +58,7 @@ const homeRedirections = () => {
                   sit officia accusamus minus error nisi architecto nulla ipsum
                   dignissimos. Odit sed qui, dolorum!
                 </p>
-                <MDBBtn color='pink' roundedsize='md'>
+                <MDBBtn color='pink' className="rounded-pill">
                   <MDBIcon far icon='clone' className='left' /> Voir les activités
                 </MDBBtn>
               </div>
@@ -88,7 +88,7 @@ const homeRedirections = () => {
                   sit officia accusamus minus error nisi architecto nulla ipsum
                   dignissimos. Odit sed qui, dolorum!
                 </p>
-                <MDBBtn color='success' roundedsize='md'>
+                <MDBBtn color='success' className="rounded-pill">
                   <MDBIcon far icon='clone' className='left' /> Voir les services
                 </MDBBtn>
               </div>

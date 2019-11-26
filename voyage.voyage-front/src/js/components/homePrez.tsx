@@ -102,7 +102,7 @@ class homePrez extends React.Component {
               // src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
               src="https://i.ibb.co/5WzzW03/logo2.png"
               alt=""
-              className="img-fluid rounded z-depth-2"
+              className="img-fluid rounded z-depth-2 ml-2" height="700" width="700"
             />
           </MDBCol>
         </MDBRow>

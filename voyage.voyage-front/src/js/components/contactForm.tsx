@@ -16,14 +16,14 @@ const contactSub = () => {
         <MDBCol lg="5" className="lg- mb-4">
           <MDBCard>
             <MDBCardBody>
-              <div className="form-header blue accent-1">
-                <h3 className="mt-2">
+              <div className="form-header blue accent-1 z-depth-1 rounded mb-0">
+                <h3 className="mt-2 ml-2 pt-2 pb-2">
                   <MDBIcon icon="envelope" /> Pour nous écrire :
                 </h3>
               </div>
               
               <div className="md-form">
-                <MDBInput
+                <MDBInput 
                   icon="user"
                   label="Votre nom"
                   iconClass="grey-text"
@@ -82,25 +82,25 @@ const contactSub = () => {
           <br />
           <MDBRow className="text-center">
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 rounded-circle">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
               <p>Paris, 75020</p>
               <p className="mb-md-0">France</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 rounded-circle">
                 <MDBIcon icon="phone" />
               </MDBBtn>
               <p>++33 1 34 56 89 71</p>
               <p className="mb-md-0">Lundi - Vendredi, 9:00-19:00</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 rounded-circle">
                 <MDBIcon icon="envelope" />
               </MDBBtn>
-              <p>info@gmail.com</p>
-              <p className="mb-md-0">sale@gmail.com</p>
+              <p>info@voyage-assistance.com</p>
+              <p className="mb-md-0">contact@voyage-assistance.com</p>
             </MDBCol>
           </MDBRow>
         </MDBCol>

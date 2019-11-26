@@ -6,7 +6,11 @@ import "../../less/components/navbar.less";
 // MDBNavLink,
 
 class FullPageIntroWithFixedNavbar extends React.Component {
-  state: { collapse: boolean; isWideEnough: boolean; };
+  state: { 
+    collapse: boolean; 
+    isWideEnough: boolean; 
+  };
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -16,13 +20,12 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
+  setState: any;
+
   onClick() {
     this.setState({
       collapse: !this.state.collapse
     });
-  }
-  setState(arg0: { collapse: boolean; }) {
-    throw new Error("Method not implemented.");
   }
 
 //   réglage position onglets :
@@ -45,9 +48,9 @@ class FullPageIntroWithFixedNavbar extends React.Component {
               {/* ou pour réglage menu hamburger :
                <MDBHamburgerToggler color="black" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> */}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left className="md-pills pills-secondary">
+                <MDBNavbarNav pills left className=" font-weight-bold text-monospace text-uppercase">
                   <MDBNavItem active>
-                    <Link to="/" className="white-text mr-5 pt-6 pb-6 md-pills pills-secondary"><strong>Accueil</strong></Link>
+                    <Link to="/" className="white-text mr-5 pt-6 pb-6 "><strong>Accueil</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     <Link to="/sejours" className="white-text mr-5 pt-6 pb-6"><strong>Séjours</strong></Link>
@@ -69,8 +72,8 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                    <MDBIcon icon="user" />
                  </MDBDropdownToggle>
                  <MDBDropdownMenu className="dropdown-default">
-                 <MDBDropdownItem><Link to="/login" className="dark-text center-text">Mon compte</Link></MDBDropdownItem>
-                   <MDBDropdownItem><Link to="/espamembre" className="dark-text center-text">Espace membre</Link></MDBDropdownItem>
+                 <MDBDropdownItem><Link to="/login" className="dark-text center-text text-uppercase">Mon compte</Link></MDBDropdownItem>
+                   <MDBDropdownItem><Link to="/espamembre" className="dark-text center-text text-uppercase">Espace membre</Link></MDBDropdownItem>
                  </MDBDropdownMenu>
                </MDBDropdown>
              </MDBNavItem>

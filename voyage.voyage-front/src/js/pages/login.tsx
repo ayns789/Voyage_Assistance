@@ -183,9 +183,10 @@ class Login extends React.Component<Props, State> {
       </MDBRow>
     </MDBContainer>
     </section>
+    </React.Fragment>
   );
 };
-      </React.Fragment>
+      {/* </React.Fragment> */}
 
       
 
