@@ -4,10 +4,10 @@ import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from 
 const contactSub = () => {
   return (
     <section className="my-5 pr-4 pl-4">
-      <h2 className="h1-responsive font-weight-bold text-center my-5 deep-purple-text">
+      <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-2">
         Contactez nous
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5">
+      <p className="text-center w-responsive mx-auto pb-5 dark-text font-weight-normal text-monospace lead">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
         error amet numquam iure provident voluptate esse quasi, veritatis
         totam voluptas nostrum quisquam eum porro a pariatur veniam.
@@ -16,17 +16,17 @@ const contactSub = () => {
         <MDBCol lg="5" className="lg- mb-4">
           <MDBCard>
             <MDBCardBody>
-              <div className="form-header blue accent-1 z-depth-1 rounded mb-0">
+              <div className="form-header blue accent-1 z-depth-1 rounded mb-0 dark-text font-weight-bold text-monospace lead">
                 <h3 className="mt-2 ml-2 pt-2 pb-2">
                   <MDBIcon icon="envelope" /> Pour nous écrire :
                 </h3>
               </div>
               
-              <div className="md-form">
+              <div className="md-form font-weight-light dark-text">
                 <MDBInput 
                   icon="user"
                   label="Votre nom"
-                  iconClass="grey-text"
+                  iconClass="dark-text"
                   type="text"
                   id="form-name"
                 />
@@ -35,7 +35,7 @@ const contactSub = () => {
                 <MDBInput
                   icon="envelope"
                   label="Votre email"
-                  iconClass="grey-text"
+                  iconClass="dark-text"
                   type="text"
                   id="form-email"
                 />
@@ -44,7 +44,7 @@ const contactSub = () => {
                 <MDBInput
                   icon="tag"
                   label="Sujet"
-                  iconClass="grey-text"
+                  iconClass="dark-text"
                   type="text"
                   id="form-subject"
                 />
@@ -53,7 +53,7 @@ const contactSub = () => {
                 <MDBInput
                   icon="pencil-alt"
                   label="Votre message"
-                  iconClass="grey-text"
+                  iconClass="dark-text"
                   type="textarea"
                   id="form-text"
                 />
@@ -72,6 +72,7 @@ const contactSub = () => {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
+              // src="https://www.openstreetmap.org/api/0.6/map?bbox=2.2289%2C48.811%2C2.2963%2C48.8368"
               title="This is a unique title"
               width="100%"
               height="100%"
@@ -83,9 +84,10 @@ const contactSub = () => {
           <MDBRow className="text-center">
             <MDBCol md="4">
               <MDBBtn tag="a" floating color="blue" className="accent-1 rounded-circle">
-                <MDBIcon icon="map-marker-alt" />
+                <MDBIcon icon="home" />
               </MDBBtn>
-              <p>Paris, 75020</p>
+              <p>33 rue Montparnasse</p>
+              <p>75020 Paris</p>
               <p className="mb-md-0">France</p>
             </MDBCol>
             <MDBCol md="4">
@@ -93,6 +95,7 @@ const contactSub = () => {
                 <MDBIcon icon="phone" />
               </MDBBtn>
               <p>++33 1 34 56 89 71</p>
+              <p>Horaires</p>
               <p className="mb-md-0">Lundi - Vendredi, 9:00-19:00</p>
             </MDBCol>
             <MDBCol md="4">
@@ -100,7 +103,7 @@ const contactSub = () => {
                 <MDBIcon icon="envelope" />
               </MDBBtn>
               <p>info@voyage-assistance.com</p>
-              <p className="mb-md-0">contact@voyage-assistance.com</p>
+              <p className="mb-md-0">support@voyage-assistance.com</p>
             </MDBCol>
           </MDBRow>
         </MDBCol>

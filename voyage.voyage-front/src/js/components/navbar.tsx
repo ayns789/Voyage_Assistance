@@ -48,9 +48,9 @@ class FullPageIntroWithFixedNavbar extends React.Component {
               {/* ou pour réglage menu hamburger :
                <MDBHamburgerToggler color="black" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> */}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav pills left className=" font-weight-bold text-monospace text-uppercase">
+                <MDBNavbarNav pills left className=" font-weight-bold text-monospace text-uppercase lead">
                   <MDBNavItem active>
-                    <Link to="/" className="white-text mr-5 pt-6 pb-6 "><strong>Accueil</strong></Link>
+                    <Link to="/" className="white-text mr-5 pt-6 pb-6"><strong>Accueil</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     <Link to="/sejours" className="white-text mr-5 pt-6 pb-6"><strong>Séjours</strong></Link>
@@ -72,8 +72,8 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                    <MDBIcon icon="user" />
                  </MDBDropdownToggle>
                  <MDBDropdownMenu className="dropdown-default">
-                 <MDBDropdownItem><Link to="/login" className="dark-text center-text text-uppercase">Mon compte</Link></MDBDropdownItem>
-                   <MDBDropdownItem><Link to="/espamembre" className="dark-text center-text text-uppercase">Espace membre</Link></MDBDropdownItem>
+                 <MDBDropdownItem><Link to="/login" className="dark-text center-text text-uppercase"><strong>Mon compte</strong></Link></MDBDropdownItem>
+                   <MDBDropdownItem><Link to="/espamembre" className="dark-text center-text text-uppercase"><strong>Espace membre</strong></Link></MDBDropdownItem>
                  </MDBDropdownMenu>
                </MDBDropdown>
              </MDBNavItem>

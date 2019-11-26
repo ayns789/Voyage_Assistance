@@ -138,13 +138,13 @@ class Login extends React.Component<Props, State> {
             <MDBCardBody>
               <MDBCardHeader className="form-header deep-blue-gradient rounded">
                 <h3 className="my-3">
-                  <MDBIcon icon="lock" /> Login:
+                  <MDBIcon icon="lock" /> Connectez vous :
                 </h3>
               </MDBCardHeader>
               <form>
                 <div className="grey-text">
                   <MDBInput
-                    label="Type your email"
+                    label="Entrez votre email"
                     icon="envelope"
                     group
                     type="email"
@@ -153,7 +153,7 @@ class Login extends React.Component<Props, State> {
                     success="right"
                   />
                   <MDBInput
-                    label="Type your password"
+                    label="Entrez votre password"
                     icon="lock"
                     group
                     type="password"
@@ -167,14 +167,14 @@ class Login extends React.Component<Props, State> {
                   className="mb-3"
                   type="submit"
                 >
-                  Login
+                  Valider
                 </MDBBtn>
               </div>
               </form>
               <MDBModalFooter>
                 <div className="font-weight-light">
-                  <p>Not a member? Sign Up</p>
-                  <p>Forgot Password?</p>
+                  <p>Pas encore membre ? Enregistrez vous</p>
+                  <p>Mot de passe oublié ?</p>
                 </div>
               </MDBModalFooter>
             </MDBCardBody>

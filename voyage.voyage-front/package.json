@@ -1,5 +1,5 @@
 {
-  "name": "cproj-front",
+  "name": "voyage.voyage-front",
   "version": "1.0.0",
   "description": "Typescript - jest - enzyme - parcel - react - react router - less",
   "main": "index.js",
@@ -27,14 +27,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qdanneville/cproj-front.git"
+    "url": "git+https://github.com/ayns789/Voyage_Assistance/tree/master/voyage.voyage-front.git"
   },
-  "author": "Quentin Danneville",
+  "author": "joly.a.idf@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/qdanneville/cproj-front/issues"
+    "url": "https://github.com/ayns789/Voyage_Assistance/tree/master/voyage.voyage-front/issues"
   },
-  "homepage": "https://github.com/qdanneville/cproj-front#readme",
+  "homepage": "https://github.com/ayns789/Voyage_Assistance/blob/master/voyage.voyage-front/README.md",
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.22",

@@ -9,10 +9,10 @@ const subscribeNews = () => {
       <MDBRow>
         <MDBCol md="12">
           <form>
-            <h2 className="h2 text-center py-4 deep-purple-text">Recevez les dernières offres de séjours</h2>
+            <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-2">Recevez les dernières offres de séjours</h2>
             <label
               htmlFor="defaultFormCardNameEx"
-              className="grey-text font-weight-light"
+              className="dark-text font-weight-light text-monospace lead"
             >
               Votre prénom
             </label>
@@ -24,7 +24,7 @@ const subscribeNews = () => {
             <br />
             <label
               htmlFor="defaultFormCardEmailEx"
-              className="grey-text font-weight-light"
+              className="dark-text font-weight-light text-monospace lead"
             >
               Votre email
             </label>

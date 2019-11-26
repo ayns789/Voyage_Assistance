@@ -1,13 +1,13 @@
 import * as React from "react";
 import { func } from "prop-types";
-import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge, MDBAnimation } from "mdbreact";
+import {  MDBRow, MDBCol, MDBIcon, MDBBtn, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBadge,  MDBAnimation } from "mdbreact";
 
 
 class homePrez extends React.Component {
   render() {
     return(
     <section className="my-5 mr-5 ml-5">
-        <h2 className="h1-responsive font-weight-bold text-center my-5 deep-purple-text">
+        <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-2">
           Notre société
         </h2>
 
@@ -26,11 +26,9 @@ class homePrez extends React.Component {
                 {/* <MDBIcon fab icon="far fa-smile-beam fa-spin" size="2x" className="cyan-text" />
               </MDBCol> */} 
               <MDBCol md="11" size="10">
-                <h5 className="font-weight-bold mb-3">Découvrez nous !</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                <h3 className="font-weight-bold mb-3 text-monospace">Découvrez nous !</h3>
+                <p className="dark-text font-weight-normal text-monospace lead">
+                
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
@@ -38,6 +36,7 @@ class homePrez extends React.Component {
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
                 </p>
+                
               </MDBCol>
             </MDBRow>
             <MDBRow className="mb-3">
@@ -46,11 +45,8 @@ class homePrez extends React.Component {
                 <MDBIcon icon="suitcase" size="2x" className="blue-text"/>
               </MDBCol>
               <MDBCol md="11" size="10">
-                <h5 className="font-weight-bold mb-3">De jolis séjours</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                <h3 className="font-weight-bold mb-3 text-monospace">De jolis séjours</h3>
+                <p className="dark-text font-weight-normal text-monospace lead">
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
@@ -68,8 +64,8 @@ class homePrez extends React.Component {
                 <MDBIcon fab icon="accessible-icon" size="2x" className="cyan-text" />
               </MDBCol>
               <MDBCol md="11" size="10">
-                <h5 className="font-weight-bold mb-3">Des activités pour tous</h5>
-                <p className="grey-text">
+                <h3 className="font-weight-bold mb-3 text-monospace">Des activités pour tous</h3>
+                <p className="dark-text font-weight-normal text-monospace lead">
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
@@ -85,8 +81,8 @@ class homePrez extends React.Component {
                 <MDBIcon icon="briefcase-medical" size="2x" className="pink-text"/>
               </MDBCol>
               <MDBCol md="11" size="10">
-                <h5 className="font-weight-bold mb-3">Des soins adaptés, une assistance sur place</h5>
-                <p className="grey-text">
+                <h3 className="font-weight-bold mb-3 text-monospace">Des soins adaptés, une assistance sur place</h3>
+                <p className="dark-text font-weight-normal text-monospace lead">
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
