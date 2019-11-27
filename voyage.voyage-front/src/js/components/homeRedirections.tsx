@@ -5,7 +5,7 @@ import {  Link } from "react-router-dom";
 const homeRedirections = () => {
   return (
     <section className='text-center my-5 mr-5 ml-5'>
-      <h2 className='h1-responsive font-weight-bold my-5 deep-purple-text text-monospace text-uppercase z-depth-2'>Découvrez nos offres</h2>
+      <h2 className='h2-responsive font-weight-bold my-5 deep-purple-text text-monospace text-uppercase z-depth-5'>Découvrez nos offres</h2>
 
       <MDBRow>
         <MDBCol md='12' className='mb-4'>
@@ -30,8 +30,9 @@ const homeRedirections = () => {
                 officia accusamus minus error nisi architecto nulla ipsum
                 dignissimos. Odit sed qui, dolorum!
               </p>
-              <MDBBtn color='light'  className="rounded-pill font-weight-bold">
-              <Link to="/sejours">
+              {/* color='default' */}
+              <MDBBtn  gradient="blue" className="rounded-pill font-weight-bold">
+              <Link to="/sejours" className="white-text z-depth-3">
                 <MDBIcon far icon='clone' className='left' /> Voir les séjours
                 </Link>
               </MDBBtn>
@@ -59,8 +60,9 @@ const homeRedirections = () => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Repellat fugiat, laboriosam, voluptatem, dolorum!
                 </p>
-                <MDBBtn color='white' className="rounded-pill font-weight-bold">
-                <Link to="/services">
+                {/* color='pink' */}
+                <MDBBtn gradient="purple" className="rounded-pill font-weight-bold">
+                <Link to="/services" className="white-text z-depth-3">
                   <MDBIcon far icon='clone' className='left' /> Voir les activités
                   </Link>
                 </MDBBtn>
@@ -89,8 +91,9 @@ const homeRedirections = () => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Repellat fugiat, laboriosam, voluptatem, dolorum!
                 </p>
-                <MDBBtn color='white' className="rounded-pill font-weight-bold">
-                <Link to="/activites">
+                {/* color='success' */}
+                <MDBBtn gradient="aqua" className="rounded-pill font-weight-bold">
+                <Link to="/activites" className="white-text z-depth-3">
                   <MDBIcon far icon='clone' className='left' /> Voir les services
                   </Link>
                 </MDBBtn>

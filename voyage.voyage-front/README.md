@@ -84,4 +84,19 @@ Parcel est livré avec un sourcemap. qui permet de mapper les fichiers de destin
 Parcel est livré avec un module de rechargement instantané (en gros, il change le fichier dist à chaque fois que vous sauvegardé un fichier dans votre code source)
 
 
+7.  Map static image : 
+_ coordonnées désirées sur : https://www.torop.net/coordonnees-gps.php
+_ image static sur : https://staticmapmaker.com/yandex/
 
+8. Fonctionnalité d'appel téléphonique depuis l'api :
+_ dans la console : npm install --save react-native-phone-call
+_ puis sur le composant concerné : 
+
+<!-- import call from 'react-native-phone-call'
+ 
+const args = {
+  number: '9093900003', // String value with the number to call
+  prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call 
+}
+ 
+call(args).catch(console.error) -->

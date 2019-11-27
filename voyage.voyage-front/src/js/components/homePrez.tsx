@@ -7,7 +7,7 @@ class homePrez extends React.Component {
   render() {
     return(
     <section className="my-5 mr-5 ml-5">
-        <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-2">
+        <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-5">
           Notre société
         </h2>
 

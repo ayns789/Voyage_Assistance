@@ -32,7 +32,7 @@ interface State {
   userIsDefined: boolean;
 }
 
-class Login extends React.Component<Props, State> {
+export default class Login extends React.Component<Props, State> {
   state: { email: string; password: string; user: {}; userIsDefined: boolean; };
   constructor(props) {
     super(props);
@@ -186,13 +186,5 @@ class Login extends React.Component<Props, State> {
     </React.Fragment>
   );
 };
-      {/* </React.Fragment> */}
-
       
-
-
-    );
-  }
-}
-
-export default Login;
+// export default Login;

@@ -8,6 +8,7 @@ const FooterPage = () => {
         <MDBRow>
           <MDBCol md="4" className="mt-2">
             <h5 className="title h2-responsive font-weight-bold text-center  text-monospace text-uppercase">A propos de la compagnie</h5>
+            <br />
             <p className="text-justify text-center w-responsive mx-auto pb-5 dark-text font-weight-normal text-monospace lead">
               Here you can use rows and columns here to organize your footer
               content, to organize your footer
