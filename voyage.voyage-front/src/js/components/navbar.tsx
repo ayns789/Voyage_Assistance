@@ -6,11 +6,7 @@ import "../../less/components/navbar.less";
 // MDBNavLink,
 
 class FullPageIntroWithFixedNavbar extends React.Component {
-  state: { 
-    collapse: boolean; 
-    isWideEnough: boolean; 
-  };
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +16,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  setState: any;
+  // setState: any;
 
   onClick() {
     this.setState({
@@ -38,19 +34,20 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     return (
       <div>
         <header>
+          {/* couleur favorite: winter-neva-gradient */}
             <MDBNavbar color="blue-gradient" dark expand="md" fixed="top">
               <MDBNavbarBrand href="/">
               <img src="https://i.ibb.co/5WzzW03/logo2.png" className="img-fluid" height="50" width="50" alt="logo" id="logo"/>
               {/* height="50" width="50"  */}
               {/* <img src="https://i.ibb.co/5WzzW03/logo2.png" alt="logo2" border="0"></img> */}
               </MDBNavbarBrand>
-              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.toggleCollapse} />}
               {/* ou pour réglage menu hamburger :
                <MDBHamburgerToggler color="black" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> */}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav pills left className=" font-weight-bold text-monospace text-uppercase lead">
+                <MDBNavbarNav left className=" font-weight-bold text-monospace text-uppercase lead">
                   <MDBNavItem active>
-                    <Link to="/" className="white-text mr-5 pt-6 pb-6"><strong>Accueil</strong></Link>
+                    <Link to="/" className="white-text mr-5 pt-6 pb-6" ><strong>Accueil</strong></Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     <Link to="/sejours" className="white-text mr-5 pt-6 pb-6"><strong>Séjours</strong></Link>

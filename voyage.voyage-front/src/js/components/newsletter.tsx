@@ -9,7 +9,7 @@ const subscribeNews = () => {
       <MDBRow>
         <MDBCol md="12">
           <form>
-            <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-5">Reçevez notre newsletter, avec les dernières offres de séjours</h2>
+            <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-1 cloudy-knoxville-gradient rounded mb-0">Reçevez notre newsletter, avec les dernières offres de séjours</h2>
             <label
               htmlFor="defaultFormCardNameEx"
               className="dark-text font-weight-light text-monospace lead"

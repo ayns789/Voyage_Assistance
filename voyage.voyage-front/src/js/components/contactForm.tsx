@@ -13,10 +13,10 @@ import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput, MDBNav
 const contactSub = () => {
   return (
     <section className="my-5 pr-4 pl-4">
-      <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-5">
+      <h2 className="h2-responsive font-weight-bold text-center my-5 deep-purple-text text-monospace text-uppercase z-depth-1 rounded mb-0 cloudy-knoxville-gradient">
         Contactez nous
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5 dark-text font-weight-normal text-monospace lead">
+      <p className="text-center w-responsive mx-auto pb-5 dark-text font-weight-normal text-monospace text-muted lead">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
         error amet numquam iure provident voluptate esse quasi, veritatis
         totam voluptas nostrum quisquam eum porro a pariatur veniam.
@@ -28,7 +28,7 @@ const contactSub = () => {
           <MDBCard>
             <MDBCardBody className="dark-text">
               <div className="form-header blue accent-1 z-depth-1 rounded mb-0">
-                <h3 className="mt-2 ml-2 pt-2 pb-2">
+                <h3 className="mt-2 ml-2 pt-2 pb-2 font-weight-bold text-monospace">
                   <MDBIcon icon="envelope" /><strong> Pour nous écrire :</strong>
                 </h3>
               </div>
@@ -76,7 +76,7 @@ const contactSub = () => {
           </MDBCard>
         </MDBCol>
         
-        <MDBCol md="6" className="d-flex justify-content-center align-items-center">
+        <MDBCol md="6" className="d-flex justify-content-center align-items-center mt-3">
         <MDBRow className="text-center">
             <MDBCol>
             <a href="https://www.google.fr/maps/place/35+Rue+Kl%C3%A9ber,+92130+Issy-les-Moulineaux/@48.8247701,2.2720859,17z/data=!3m1!4b1!4m5!3m4!1s0x47e67a827e523c7d:0xca85b8e2599bdd50!8m2!3d48.8247666!4d2.2742746">

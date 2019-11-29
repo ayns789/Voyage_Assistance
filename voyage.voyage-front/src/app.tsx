@@ -13,6 +13,7 @@ import Sejour from "./js/pages/sejours";
 //Components
 import Header from "./js/components/header";
 import Navbar from "./js/components/navbar";
+import ScrollToTop from "./js/components/scrollTop"; 
 
 // reactstrap :
 import "bootstrap/dist/css/bootstrap.css";
@@ -29,6 +30,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Header />
         {/* A <Switch> looks through its children <Route>s and

@@ -100,3 +100,5 @@ const args = {
 }
  
 call(args).catch(console.error) -->
+
+ <!-- Pour vérifier la version de react : `npm view react version` -->

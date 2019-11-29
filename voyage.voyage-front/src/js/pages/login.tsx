@@ -33,7 +33,14 @@ interface State {
 }
 
 export default class Login extends React.Component<Props, State> {
-  state: { email: string; password: string; user: {}; userIsDefined: boolean; };
+  
+  state: { 
+    email: string; 
+    password: string; 
+    user: {}; 
+    userIsDefined: boolean; 
+  };
+
   constructor(props) {
     super(props);
 
