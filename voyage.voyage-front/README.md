@@ -102,3 +102,5 @@ const args = {
 call(args).catch(console.error) -->
 
  <!-- Pour vérifier la version de react : `npm view react version` -->
+
+ <!-- Component scrollTop pour réinitialiser le scroll pendant la navigation d'une page à l'autre, donc pour remonter en haut de la page automatiquement -->
