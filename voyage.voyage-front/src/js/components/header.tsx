@@ -1,7 +1,7 @@
 import * as React from "react";
-import Slides from "./slide";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavLink, MDBCollapse, MDBNavItem,  MDBContainer, MDBMask, MDBView, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
-
+// import Slides from "./slide";
+import { MDBMask, MDBView } from "mdbreact";
+import "../../less/components/header.less";
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,20 +11,21 @@ class Header extends React.Component {
     return (
       // <Slides />
       // <h1>Home</h1>
-      <div>
-        <header>
+      // <div>
+        <div className="head">
           
 
           <MDBView src="https://mdbootstrap.com/img/Photos/Others/img%20(50).jpg" className="d-block w-100 h-50">
             <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
-              <h1 className="font-weight-bold text-monospace">Voyage Assistance</h1>
-              <h3 className="font-weight-normal text-monospace lead"><strong>L'organisme de voyages sur mesure</strong></h3>
+              <h1>Voyage Assistance</h1>
               <br />
-              <p className="font-weight-normal text-monospace lead"><strong>Nous sommes là pour vous amener ailleurs ! </strong></p>
+              <h2><strong>L'organisme de voyages sur mesure</strong></h2>
+              
+              <p><strong>Nous sommes là pour vous amener ailleurs ! </strong></p>
             </MDBMask>
           </MDBView>
-        </header>
-      </div>
+        </div>
+      //  </div> 
     );
   }
 }

@@ -30,9 +30,10 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <ScrollToTop />
+        
         <Navbar />
         <Header />
+        <ScrollToTop />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 

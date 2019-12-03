@@ -16,12 +16,11 @@ class homePrez extends React.Component {
           Notre société
         </h2>
 
-        
             <MDBRow className="mb-3">
             <MDBCol lg="7">
             <MDBRow className="mb-3">
             <MDBCol>
-            <MDBAnimation type="bounce-slow" infinite>
+            <MDBAnimation type="headShake slow" infinite >
             <img className="img-fluid img-thumbnail" alt="" src="https://i.ibb.co/5WzzW03/logo2.png" />
         </MDBAnimation>
     {/* <img src="https://i.ibb.co/5WzzW03/logo2.png" alt="logo" className="img-thumbnail" /> */}
@@ -37,9 +36,7 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                  Lorem ipsum dolor sit amet.
                 </p>
                 
               </MDBCol>
@@ -55,9 +52,7 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                  Lorem ipsum dolor sit amet.
                 </p>
               </MDBCol>
             </MDBRow>
@@ -74,9 +69,7 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                  Lorem ipsum dolor sit amet.
                 </p>
               </MDBCol>
             </MDBRow>
@@ -91,9 +84,7 @@ class homePrez extends React.Component {
                   Lorem ipsum dolor sit amet, consectetur adipisicing.
                   Reprehenderit maiores nam, aperiam minima elit assumenda
                   voluptate velit.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing.
-                  Reprehenderit maiores nam, aperiam minima elit assumenda
-                  voluptate velit.
+                  Lorem ipsum dolor sit amet.
                 </p>
               </MDBCol>
             </MDBRow>
@@ -103,7 +94,7 @@ class homePrez extends React.Component {
               // src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg"
               src="https://i.ibb.co/5WzzW03/logo2.png"
               alt=""
-              className="img-fluid rounded z-depth-2 ml-2" height="700" width="700"
+              className="img-fluid rounded z-depth-2 ml-2" height="650" width="650"
             />
           </MDBCol>
         </MDBRow>

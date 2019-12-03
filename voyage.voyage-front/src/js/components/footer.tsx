@@ -3,6 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBBtn, MDBIcon } from "mdbrea
 
 const FooterPage = () => {
   return (
+    <div>
     <MDBFooter color="blue-gradient" className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
@@ -18,13 +19,10 @@ const FooterPage = () => {
               content, to organize your footer
               content.
 
-              Here you can use rows and columns here to organize your footer
-              content, to organize your footer
-              content.
             </p>
-
+            
           </MDBCol>
-          
+          {/* justify-content-center align-items-center */}
           <MDBCol md="4" className="flex-center flex-column mt-3 mb-3 font-weight-bold text-center text-monospace">
             <MDBBtn tag="a" floating color="dark" className="accent-1 rounded-circle">
                 <MDBIcon icon="home" />
@@ -64,6 +62,7 @@ const FooterPage = () => {
         </MDBContainer>
       </div>
     </MDBFooter>
+    </div>
   );
 }
 

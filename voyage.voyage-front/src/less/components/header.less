@@ -1,0 +1,70 @@
+@titleshad: #FC0 1px 0 10px;
+@textshad: black 0.1em 0.1em 0.2em;
+@fontF: "Georgia", "serif";
+
+.header {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 15px;
+  
+    background: #222;
+  
+    .project {
+      display: flex;
+      align-content: center;
+      align-items: center;
+  
+      // h1 {
+      //   padding-left: 15px;
+      //   margin: 0;
+  
+      //   // font-size: 1.5rem;
+      //   color: white;
+      // }
+  
+      i {
+        display: block;
+  
+        width: 50px;
+        height: 50px;
+  
+        background: white;
+        border-radius: 4px;
+      }
+    }
+    .profile {
+      i {
+        display: block;
+  
+        width: 50px;
+        height: 50px;
+  
+        background: white;
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  .head h1 {
+    font-size: 70px !important;
+    font-family: @fontF;
+    letter-spacing: 2px;
+    text-shadow: @titleshad;
+    margin-top: 15px
+  }
+  .head h2 {
+    font-size: xx-large ;
+    font-family: @fontF;
+    letter-spacing: 2px;
+    text-shadow: @textshad;
+  }
+  
+  .head p {
+    font-size: x-large !important;
+    font-family: @fontF;
+    letter-spacing: 2px;
+    text-shadow: @textshad;
+  }

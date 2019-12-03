@@ -30,7 +30,7 @@ const homeRedirections = () => {
                 officia accusamus minus error nisi architecto nulla ipsum
                 dignissimos. Odit sed qui, dolorum!
               </p>
-              <Link to="/sejours" className="white-text z-depth-3">
+              <Link to="/sejours" className="white-text z-depth-1">
               <MDBBtn  gradient="blue" className="rounded-pill font-weight-bold">
                 <MDBIcon  icon="mouse-pointer" className='left' /> Voir les séjours
               </MDBBtn>
@@ -59,7 +59,7 @@ const homeRedirections = () => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Repellat fugiat, laboriosam, voluptatem, dolorum!
                 </p>
-                <Link to="/services" className="white-text z-depth-3">
+                <Link to="/services" className="white-text z-depth-1">
                 <MDBBtn gradient="purple" className="rounded-pill font-weight-bold">
                   <MDBIcon  icon='mouse-pointer' className='left' /> Voir les activités
                 </MDBBtn>
@@ -89,7 +89,7 @@ const homeRedirections = () => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Repellat fugiat, laboriosam, voluptatem, dolorum!
                 </p>
-                <Link to="/activites" className="white-text z-depth-3">
+                <Link to="/activites" className="white-text z-depth-1">
                 <MDBBtn gradient="aqua" className="rounded-pill font-weight-bold">
                   <MDBIcon  icon='mouse-pointer' className='left' /> Voir les services
                 </MDBBtn>

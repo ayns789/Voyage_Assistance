@@ -48,6 +48,7 @@ const Example = (props) => {
 
   const slides = items.map((item) => {
     return (
+      
       <CarouselItem
         className="custom-tag"
         tag="div"

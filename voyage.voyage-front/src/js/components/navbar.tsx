@@ -1,8 +1,8 @@
-
 import React from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem,  MDBContainer, MDBMask, MDBView, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 import {  Link } from "react-router-dom";
 import "../../less/components/navbar.less";
+// import $ from "jquery";
 // MDBNavLink,
 
 class FullPageIntroWithFixedNavbar extends React.Component {
@@ -32,9 +32,9 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 
   render() {
     return (
-      <div>
+      
         <header>
-          {/* couleur favorite: winter-neva-gradient */}
+          {/* couleur favorite: winter-neva-gradient , couleur retenue : morpheus-den-gradient */}
             <MDBNavbar color="blue-gradient" dark expand="md" fixed="top">
               <MDBNavbarBrand href="/">
               <img src="https://i.ibb.co/5WzzW03/logo2.png" className="img-fluid" height="50" width="50" alt="logo" id="logo"/>
@@ -78,7 +78,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
               </MDBCollapse>
             </MDBNavbar>
         </header>
-      </div>
+     
     );
   }
 }
