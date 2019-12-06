@@ -34,16 +34,13 @@ interface State {
 
 export default class Login extends React.Component<Props, State> {
   
-  state: { 
-    email: string; 
-    password: string; 
-    user: {}; 
-    userIsDefined: boolean; 
-  };
-
+  // Je construit ma classe
+  // Avec les props qui sont les variables de mon parent
   constructor(props) {
     super(props);
 
+    //J'initialise mon state.
+    //Un state est un objet.
     this.state = {
       email: "email@test.com",
       password: "derpderp",
@@ -54,10 +51,12 @@ export default class Login extends React.Component<Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+    //Quand mon composant s'initialise
   componentDidMount() {
     // window.localStorage.clear();
   }
 
+  //Quand on rentre des données dans mon input
   handleSubmit(event) {
     event.preventDefault();
 
@@ -105,38 +104,7 @@ export default class Login extends React.Component<Props, State> {
       // </React.Fragment>
 
       <React.Fragment>
-        {/* <section className="my-5 mr-5 ml-5">
-      <Container className="Login">
-        <h2>Connectez vous</h2>
-        <Form className="form">
-        <div id="text">
-          <Col>
-            <FormGroup>
-              <Label>Email</Label>
-              <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="myemail@email.com"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input
-                type="password"
-                name="password"
-                id="examplePassword"
-                placeholder="********"
-              />
-            </FormGroup>
-          </Col>
-          </div>
-          <Button>Submit</Button>
-        </Form>
-      </Container>
-      </section> */}
+        
       <section className="my-5">
     <MDBContainer className="Login">
       <MDBRow>
@@ -155,6 +123,7 @@ export default class Login extends React.Component<Props, State> {
                     icon="envelope"
                     group
                     type="email"
+                    name="email"
                     validate
                     error="wrong"
                     success="right"
@@ -164,6 +133,7 @@ export default class Login extends React.Component<Props, State> {
                     icon="lock"
                     group
                     type="password"
+                    name="password"
                     validate
                   />
                 </div>

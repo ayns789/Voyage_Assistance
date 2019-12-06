@@ -1,7 +1,49 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from "mdbreact";
 
-const subscribeNews = () => {
+// //Typescript
+// interface Props {
+//   title: string;
+// }
+
+// //Typescript
+// interface State {
+//   name: string;
+//   email: string;
+// }
+
+// class subscribeNews extends React.Component<Props, State> {
+  class subscribeNews extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      nameSubscriber:"", 
+      emailSubscriber:""
+    }
+  }
+
+  handleChange = event =>{
+    this.setState({ [event.target.nameSubscriber]:event.target.value })
+    }
+
+    handleSubmit = event =>{
+    event.preventDefault();
+    const url ="http://localhost:8080/newsletter/add";
+
+    const data = { nameSubscriber:this.state.nameSubscriber, emailSubscriber:this.state.emailSubscriber };
+
+    fetch(url, { method: "POST", // or ‘PUT’
+
+    body: JSON.stringify(data), // data can be `string` or {object}!
+
+    headers:{ "Content-Type": "application/json" } })
+    .then(res => res.json())
+    .catch(error => console.error("Error:", error))
+    .then(response => console.log("Success:", response)); 
+  }
+
+  render(){
   return (
 
     <div>
@@ -18,6 +60,7 @@ const subscribeNews = () => {
             </label>
             <input
               type="text"
+              name="nameSubscriber"
               id="defaultFormCardNameEx"
               className="form-control"
             />
@@ -30,6 +73,7 @@ const subscribeNews = () => {
             </label>
             <input
               type="email"
+              name="emailSubscriber"
               id="defaultFormCardEmailEx"
               className="form-control"
             />
@@ -46,5 +90,7 @@ const subscribeNews = () => {
     </div>
   );
 };
+}
+
 
 export default subscribeNews;

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBDropdown, MDBDropdownToggle, MDBIcon, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 import {  Link } from "react-router-dom";
 import "../../less/components/navbar.less";
 // import $ from "jquery";
 // MDBNavLink,
 
-class FullPageIntroWithFixedNavbar extends React.Component {
 
+
+class FullPageIntroWithFixedNavbar extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +33,7 @@ class FullPageIntroWithFixedNavbar extends React.Component {
 // indigo, peach-gradient, purple-gradient, aqua-gradient, blue-gradient
 
   render() {
+    
     return (
       
         <header>
