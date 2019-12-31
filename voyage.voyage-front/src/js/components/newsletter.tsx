@@ -2,42 +2,21 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from "mdbreact";
 
 // //Typescript
-interface Props {
+// interface Props {
   
-}
+// }
 
-// //Typescript
-interface State {
-  nameSubscriber: string;
-  emailSubscriber: string;
-//   user: object;
-//   userIsDefined: boolean;
-}
+// // //Typescript
+// interface State {
+//   nameSubscriber: string;
+//   emailSubscriber: string;
+// //   user: object;
+// //   userIsDefined: boolean;
+// }
 
-class subscribeNews extends React.Component <Props, State>{
-  // class subscribeNews extends React.Component {
-    // constructor(props){
-    //   super(props);
-    //   this.handleSubmit = this.handleSubmit.bind(this);
-    //  }
-
-
-
-    //  handleSubmit(event){ 
-    //   event.preventDefault();
-
-    //     const data = { nameSubscriber:this.state.nameSubscriber, emailSubscriber:this.state.emailSubscriber };
-    //   const url ="http://localhost:8080/newsletter/add";
-
-    //   alert(console.log(data));
-    //   fetch(url, {
-    //    method: 'post',
-    //    body: {
-    //     "nameSubscriber": this.refs.nameSubscriber.value,
-    //     "emailSubscriber": this.refs.emailSubscriber.value;
-    //    }
-    //   });
-    //  };
+// class subscribeNews extends React.Component <Props, State>{
+  class subscribeNews extends React.Component {
+   
   constructor(props) {
     super(props);
 
@@ -54,6 +33,11 @@ class subscribeNews extends React.Component <Props, State>{
 
   // document.getElementById('handleSubmit').addEventListener('submit', handleSubmit);
 
+  // componentDidMount() {
+  //   // window.localStorage.clear();
+  // }
+
+
     handleSubmit = event =>{
           event.preventDefault();
           
@@ -62,22 +46,19 @@ class subscribeNews extends React.Component <Props, State>{
       // var vir = new Object(JSON.stringify(data));
       this.state.nameSubscriber = document.getElementById('name').value;
       this.state.emailSubscriber = document.getElementById('email').value;
-       const toto = { nameSubscriber:this.state.nameSubscriber, emailSubscriber:this.state.emailSubscriber };
+      //  let toto = { name_subscriber:this.state.nameSubscriber, email_subscriber:this.state.emailSubscriber };
       // this.setState.nameSubscriber = nameSubscriber;
       // this.setState.emailSubscriber = emailSubsriber;
       
 
-   
-        alert('Le nom a été soumis : ' + this.state.emailSubscriber);
+      // alert('Le nom a été soumis : ' + toto );
+        alert('Le nom a été soumis : ' + this.state.nameSubscriber + ' email : ' + this.state.emailSubscriber );
 
         
         // alert('Le nom a été soumis : ' + document.getElementById('name').value = '';);
         // let emailSubscriber = document.getElementById('email').value = '';
         // const data = { nameSubscriber, emailSubscriber };
-        // this.state.nameSubscriber = 
-        
-        
-    
+
         const url ="http://localhost:8080/newsletter/add";
 
         // const data = { nameSubscriber: this.state.nameSubscriber, emailSubscriber: this.state.emailSubscriber };
@@ -87,16 +68,39 @@ class subscribeNews extends React.Component <Props, State>{
           "Accept": "application/json",
         "Content-Type": "application/json"});
 
+        // let obj = {
+        //   name_subscriber: this.state.nameSubscriber,
+        //   email_subscriber: this.state.emailSubscriber
+        // }
+        // let obj = {
+        //   nameSubscriber = document.getElementById('name').value;
+        //   emailSubscriber = document.getElementById('email').value;
+        // }
+
+
+        // this.setState({
+        //   name_subscriber: this.state.nameSubscriber,
+        //   email_subscriber: this.state.emailSubscriber
+        // });
+
+        
+
         fetch(url, { 
 
             method: "POST", // ou 'PUT'
 
-            //  headers:{ "Content-Type": "application/json"},
+            // headers:{ "Content-Type": "application/json"},
             headers,
-            mode: "no-cors",
-            
-            body: JSON.stringify(toto) // data peut etre string ou {object}
-        })
+            // mode: "no-cors", 
+            body: JSON.stringify( {
+              // {obj}
+              nameSubscriber: this.state.nameSubscriber,
+              emailSubscriber: this.state.emailSubscriber
+            } )
+            // body : JSON.stringify(this.state.nameSubscriber, this.state.emailSubscriber)
+        }).then(response => response.json())
+        .then((data) =>  console.log(data))
+        .catch((err)=>console.log(err));
       //   .then(response => {
       //     if (response.ok) {
       //         response.json()
@@ -110,20 +114,7 @@ class subscribeNews extends React.Component <Props, State>{
       // }).catch(error => {
       //     console.error(error);
       // });
-        .then(response => response.json())
-        .then((data) =>  console.log(data))
-        .catch((err)=>console.log(err));
-
-        // .then(data => {
-        //   data.json().then(results => {
-        //     this.setState({
-        //       user: results[0],
-        //       userIsDefined: true
-        //     });
-    
-        //     window.localStorage.setItem("user", results[0]);
-        //   });
-        // });
+        
     
   }
 
