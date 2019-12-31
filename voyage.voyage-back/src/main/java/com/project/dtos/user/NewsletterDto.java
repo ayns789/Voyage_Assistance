@@ -1,33 +1,33 @@
-package com.project.entities;
+package com.project.dtos.user;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-@Entity
-@Table(name="t_newsletter")
-public class Newsletter extends AbstractEntityId {
-	
-	
+public class NewsletterDto {
+
+	@NotBlank
 	private String nameSubscriber;
 
-	
+	@NotBlank
 	private String emailSubscriber;
 	
-	public Newsletter() {
+	public NewsletterDto() {
 		
 	}
 
-	
+	public NewsletterDto(@NotBlank String nameSubscriber, @NotBlank String emailSubscriber) {
+		super();
+		this.nameSubscriber = nameSubscriber;
+		this.emailSubscriber = emailSubscriber;
+	}
+
+
 	public String getNameSubscriber() {
 		return nameSubscriber;
 	}
 
-
 	public void setNameSubscriber(String nameSubscriber) {
 		this.nameSubscriber = nameSubscriber;
 	}
-
 
 	public String getEmailSubscriber() {
 		return emailSubscriber;
@@ -37,6 +37,4 @@ public class Newsletter extends AbstractEntityId {
 		this.emailSubscriber = emailSubscriber;
 	}
 	
-	
-
 }

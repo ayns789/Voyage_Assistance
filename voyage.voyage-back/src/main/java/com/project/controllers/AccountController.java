@@ -25,43 +25,43 @@ public class AccountController {
 	
 
     protected AccountController(AccountService service) {
-	this.service = service;
+    	this.service = service;
     }
     
     @GetMapping("/get/{id}")
     public AccountDto one(@PathVariable("id") Long id) {
-	return service.one(id);
+    	return service.one(id);
     }
     
 ////    recuperer liste directement d'un ViewDto
     @GetMapping("/all")
     protected List<AccountViewDto> getAll() {
     	List<AccountViewDto> accounts = service.getAll();
-	return accounts; 
+    	return accounts; 
     }
 
     
     // recupere liste avec parametres de pagination
-    @GetMapping(value="/addall")
+    @GetMapping("/addall")
     public AccountListDto list(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
-	return service.list(page, size);
+    	return service.list(page, size);
     }
     
     @PostMapping(value="/add")
     public void createAccount(@RequestBody @Valid AccountDto account) {
-	service.create(account);
+    	service.create(account);
     }
     
     @PutMapping("/{id}/modif")
     public void update(@PathVariable("id") Long id,
 	    @RequestBody @Valid AccountDto account) {
-	service.update(id, account);
+    	service.update(id, account);
     }
 
     
     @DeleteMapping("/{id}/del")
     public void delete(@PathVariable("id") Long id) {
-	service.delete(id);
+    	service.delete(id);
     }
     
 }

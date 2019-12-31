@@ -21,5 +21,11 @@ public abstract class AbstractEntityId {
 
     public void setId(Long id) {
 	this.id = id;
+	
+	/*
+	 * toto t = neww toto
+	 * t.create.
+	 * t.getId
+	 */
     }
 }

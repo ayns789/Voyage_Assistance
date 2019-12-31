@@ -38,7 +38,23 @@ public class AddressServiceImpl implements AddressService {
 		entity.setPostalCode(address.getPostalCode());
 		entity.setCountry(address.getCountry());
 		addressRepo.save(entity);
+//		System.out.println("VVVVVVVVVV :"+ entity.getId());
 	}	
+	
+//	@Override
+//	public Long create(AddressDto address) {
+//		Account account = accountRepo.getOne(address.getAccountId());
+//		Address entity = new Address();
+//		entity.setAccount(account);
+//		entity.setCityName(address.getCityName());
+//		entity.setStreetNumber(address.getStreetNumber());
+//		entity.setStreetName(address.getStreetName());
+//		entity.setRegion(address.getRegion());
+//		entity.setPostalCode(address.getPostalCode());
+//		entity.setCountry(address.getCountry());
+//		addressRepo.save(entity);
+//		return entity.getId();
+//	}	
 	
 	@Override
 	public AddressDto one(Long id) {
