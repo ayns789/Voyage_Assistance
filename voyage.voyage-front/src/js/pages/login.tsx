@@ -54,9 +54,9 @@ export default class Login extends React.Component<Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    // window.localStorage.clear();
-  }
+  // componentDidMount() {
+  //   // window.localStorage.clear();
+  // }
 
   handleChangeUsername(username) {
     this.setState({ username: username });
