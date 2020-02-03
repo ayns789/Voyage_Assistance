@@ -42,7 +42,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from "mdbreact";
 
 
         const headers = new Headers({
-          "Accept": "application/json",
+          // "Accept": "application/json",
         "Content-Type": "application/json"});
 
  

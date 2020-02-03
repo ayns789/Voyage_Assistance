@@ -53,7 +53,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "bootstrap": "^4.3.1",
     "bootstrap-css-only": "^4.3.1",
-    "jquery": "^1.9.1",
+    "jquery": "^3.4.1",
     "mdbreact": "^4.22.1",
     "react-native": "^0.61.5",
     "react-native-phone-call": "^1.0.9",
