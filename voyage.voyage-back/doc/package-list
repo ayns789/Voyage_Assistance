@@ -1,0 +1,8 @@
+com.project
+com.project.controllers
+com.project.dtos.admin
+com.project.dtos.user
+com.project.entities
+com.project.enums
+com.project.repositories
+com.project.services
