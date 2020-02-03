@@ -20,9 +20,9 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from "mdbreact";
 
   // document.getElementById('handleSubmit').addEventListener('submit', handleSubmit);
 
-  // componentDidMount() {
-  //   // window.localStorage.clear();
-  // }
+  componentDidMount() {
+    // window.localStorage.clear();
+  }
 
 
     handleSubmit = event =>{
