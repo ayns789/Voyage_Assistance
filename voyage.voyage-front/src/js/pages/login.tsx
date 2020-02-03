@@ -54,6 +54,10 @@ export default class Login extends React.Component<Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    // window.localStorage.clear();
+  }
+
   handleChangeUsername(username) {
     this.setState({ username: username });
   }
@@ -62,10 +66,6 @@ export default class Login extends React.Component<Props, State> {
     this.setState({ password: password });
   }
 
-    
-  componentDidMount() {
-    window.localStorage.clear();
-  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -76,7 +76,7 @@ export default class Login extends React.Component<Props, State> {
       alert("Les champs doivent être remplis");
       return;
     }
-    console.log(this.state);
+    // console.log(this.state);
     // alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.password );
 
     fetch("http://localhost:8282/oauth/token", {
@@ -100,15 +100,12 @@ export default class Login extends React.Component<Props, State> {
         if (results.access_token) {
           this.setState({
             access_token: results.access_token
-            user: results[0],
-          userIsDefined: true
           });
 
           localStorage.setItem("access_token", this.state.access_token);
-          // localStorage.setItem("username", this.state.username );
           this.setState({ userIsDefined: true });
           console.log("access_token", localStorage.getItem("access_token"));
-        } 
+        }
       });
     });
 

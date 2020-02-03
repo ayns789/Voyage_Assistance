@@ -15,22 +15,9 @@ interface State {
   password: string;
   confirmation: string;
   role: number;
-  submitted: boolean;
-      loading: boolean;
-  // user: object;
-  // userIsDefined: boolean;
 }
 
 class Register extends React.Component <Props, State> {
-
-  // state: {
-  // civility: number;
-  // firstName: string;
-  // lastName: string;
-  // username: string;
-  // password: string;
-  // confirmation: string;
-  // }
   
 
   constructor(props) {
@@ -43,11 +30,7 @@ class Register extends React.Component <Props, State> {
       username:"",
       password:"",
       confirmation: "",
-      role: 0,
-      submitted: false,
-      loading: false
-      // user: {},
-      // userIsDefined: false
+      role: 0
     };
     this.handleChangeCivility = this.handleChangeCivility.bind(this);
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
@@ -86,14 +69,6 @@ class Register extends React.Component <Props, State> {
 
   handleSubmit = event =>{
     event.preventDefault();
-
-//     let element = event.currentTarget as HTMLInputElement;
-// let value = element.value;
-
-//On actualise notre state
-this.setState({
-  submitted: true
-});
     
 
     const { civility, firstName, lastName, username, password, confirmation } = this.state;
@@ -109,17 +84,13 @@ this.setState({
       return;
     }
 
-    //On actualise notre state
-    this.setState({
-      loading: true
-    });
 
   alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.civility );
 
   const url ="http://localhost:8282/api/account/add";
 
   const headers = new Headers({
-    "Accept": "application/json",
+    // "Accept": "application/json",
   "Content-Type": "application/json"});
 
   
@@ -149,16 +120,16 @@ this.setState({
 
     render() {
 
-      if (localStorage.getItem("access_token")) {
-        location.href = "/login";
-        return (
-          <Redirect
-            to={{
-              pathname: "/login"
-            }}
-          />
-        );
-      }
+      // if (localStorage.getItem("access_token")) {
+      //   location.href = "/login";
+      //   return (
+      //     <Redirect
+      //       to={{
+      //         pathname: "/login"
+      //       }}
+      //     />
+      //   );
+      // }
 
   return (
     <React.Fragment>
