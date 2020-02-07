@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.project.dtos.AccountCreateDto;
+import com.project.dtos.AccountDataDto;
 import com.project.dtos.AccountViewDto;
 
 public interface AccountDetailsService extends UserDetailsService {
@@ -37,4 +38,6 @@ public interface AccountDetailsService extends UserDetailsService {
      *         username; {@code false} otherwise
      */
     boolean usernameIsUnique(String username);
+
+    AccountCreateDto one(Long id);
 }

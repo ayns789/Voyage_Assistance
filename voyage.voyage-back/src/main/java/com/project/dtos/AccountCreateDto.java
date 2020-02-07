@@ -31,7 +31,7 @@ public class AccountCreateDto {
 	private Long role;
 
 
-    protected AccountCreateDto() {
+    public AccountCreateDto() {
 	// Empty no-arg constructor
     }
     

@@ -1,3 +1,50 @@
+
+// // ./pages/login.js
+// import React, {Component} from 'react';
+// import AuthService from '../components/authService';
+
+// const auth = new AuthService("http://localhost:8282/oauth/token");
+
+// class Login extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//   }
+
+//   componentDidMount () {
+//     if (auth.loggedIn()) {
+//       this.props.url.replaceTo('/profil');   // redirect if you're already logged in
+//     }
+//   }
+
+//   handleSubmit (e) {
+//     e.preventDefault()
+//     // yay uncontrolled forms!
+//     auth.login(this.refs.username.value, this.refs.password.value)
+//       .then(res => {
+//         console.log(res)
+//         this.props.url.replaceTo('/profil');
+//       })
+//       .catch(e => console.log(e))  // you would show/hide error messages with component state here 
+//   }
+
+//   render () {
+//     return (
+//       <div>
+//          Login
+//           <form onSubmit={this.handleSubmit} >
+//             <input type="text" ref="username"/>
+//             <input type="password" ref="password"/>
+//             <input type="submit" value="Submit"/>
+//           </form>
+//       </div>
+//     )
+//   }
+// }
+
+// export default Login;
+
+
 import * as React from "react";
 
 import { Redirect, Link } from "react-router-dom";
@@ -17,6 +64,7 @@ import {
   MDBBtn,
   MDBInput
 } from "mdbreact";
+// import ls from 'local-storage';
 
 
 //Typescript
@@ -30,9 +78,15 @@ interface State {
   password: string;
   grant_type: string;
   client_id: string;
+  user_id: number;
+  // id: number;
   access_token: string;
+  // refresh_token: string;
   user: object;
   userIsDefined: boolean;
+  // submitted: boolean,
+  //     loading: boolean,
+  //     error: string
 }
 
 export default class Login extends React.Component<Props, State> {
@@ -44,9 +98,14 @@ export default class Login extends React.Component<Props, State> {
     password: "",
     grant_type: "password",
     client_id: "my-client-app",
+    user_id: 0,
     access_token: "",
+    // refresh_token: "",
     user: {},
     userIsDefined: false
+    // submitted: false,
+    //   loading: false,
+    //   error: ""
   };
 
   this.handleChangeUsername = this.handleChangeUsername.bind(this);
@@ -66,9 +125,21 @@ export default class Login extends React.Component<Props, State> {
     this.setState({ password: password });
   }
 
+  // setProfile(profile){
+  //   // Saves profile data to localStorage
+  //   localStorage.setItem('profile', JSON.stringify(this.state));
+  // }
+
 
   handleSubmit(event) {
     event.preventDefault();
+
+    // //On actualise notre state
+    // this.setState({
+    //   submitted: true
+    // });
+
+    // sessionStorage.user = {name: this.state.username.valueOf};
 
     const { username, password, grant_type, client_id } = this.state;
 
@@ -76,13 +147,21 @@ export default class Login extends React.Component<Props, State> {
       alert("Les champs doivent être remplis");
       return;
     }
+
+    // //On actualise notre state
+    // this.setState({
+    //   loading: true
+    // });
+
     // console.log(this.state);
     // alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.password );
+
+    // let daty;
 
     fetch("http://localhost:8282/oauth/token", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
       },
       body:
         "username=" +
@@ -93,16 +172,27 @@ export default class Login extends React.Component<Props, State> {
         grant_type +
         "&client_id=" +
         client_id +
-        "",
+        "" , 
       mode: "cors"
     }).then(data => {
       data.json().then(results => {
         if (results.access_token) {
+          
           this.setState({
-            access_token: results.access_token
+            access_token: results.access_token,
+            user_id: results.userId
+            // client_id: results.client_id
+            // id : ls.get(id);
           });
 
-          localStorage.setItem("access_token", this.state.access_token);
+          localStorage.setItem("access_token", JSON.stringify(this.state.access_token));
+          localStorage.setItem("user_id", this.state.user_id);
+          // const userdata = this.state;
+          // localStorage.setItem({userdata});
+          // localStorage.setItem("daty", data.USER_ID_KEY);
+          // localStorage.setItem("daty", JSON.stringify(data));
+          // sessionStorage.setItem("daty", JSON.stringify(this.state));
+          
           this.setState({ userIsDefined: true });
           console.log("access_token", localStorage.getItem("access_token"));
         }
@@ -111,9 +201,17 @@ export default class Login extends React.Component<Props, State> {
 
   }
 
+  // private readonly newProperty = this;
+
+  // private newMethod() {
+  //   localStorage.setItem("data", this.newProperty.state);
+  // }
+
   render() {
     if (localStorage.getItem("access_token")) {
       location.href = "/profil";
+      // let daty;
+      // localStorage.setItem(daty, JSON.stringify(this.state));
       return (
         <Redirect
           to={{
@@ -192,4 +290,4 @@ export default class Login extends React.Component<Props, State> {
   );
 };
       
-// export default Login;
+export default Login;

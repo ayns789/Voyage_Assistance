@@ -10,6 +10,7 @@ import com.project.config.CustomUserDetails;
 import com.project.config.ResourceNotFoundException;
 import com.project.dtos.AccountAuthViewDto;
 import com.project.dtos.AccountCreateDto;
+import com.project.dtos.AccountDataDto;
 import com.project.dtos.AccountViewDto;
 import com.project.entities.Account;
 import com.project.entities.Civility;
@@ -84,6 +85,19 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 		repo.save(account);
 	}
 
+	@Override
+	public AccountCreateDto one(Long id) {
+		Account entity = repo.findById(id).get();
+		AccountCreateDto account = new AccountCreateDto();
+		account.setFirstName(entity.getFirstName());
+		account.setLastName(entity.getLastName());
+		account.setUsername(entity.getUsername());
+//		account.setPassword(entity.getPassword());
+//		account.setCivility(entity.getCivility());
+//		account.setRole(entity.getRole());
+		return account;
+	}
+	
 	@Override
 	public boolean usernameIsUnique(String username) {
 		return !repo.existsByUsernameIgnoreCase(username);

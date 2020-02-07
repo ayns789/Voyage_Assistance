@@ -38,8 +38,9 @@ public class AccountController {
 	@CrossOrigin
 //	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/get/{id}")
-	public AccountViewDto one(@PathVariable("id") Long id) {
-		return service.getCurrentUserInfo(id);
+	public AccountCreateDto one(@PathVariable("id") Long id) {
+//		return service.getCurrentUserInfo(id);
+		return service.one(id);
 	}
 
 ////recuperer liste directement d'un ViewDto

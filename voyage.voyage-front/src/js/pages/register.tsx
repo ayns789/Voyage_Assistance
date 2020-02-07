@@ -41,6 +41,7 @@ class Register extends React.Component <Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  
 
   handleChangeCivility(civility) {
     this.setState({ civility : civility });
@@ -117,6 +118,21 @@ class Register extends React.Component <Props, State> {
     }
   });
 }
+// .then(function(response){
+//   if(response.ok) {
+//     console.log(response)
+//     return response;
+//   }
+//   throw new Error('Network response was not ok.');
+// }).then(function(data) { 
+//   console.log(data);
+// }).catch(function(error) {
+//   console.log('There has been a problem with your fetch operation: ' + error);
+// });
+// alert('Submitted: ' + " " + this.state.firstName +  " " + this.state.lastName + " " + this.state.username );
+// event.preventDefault();
+// this.context.router.push('/profil');
+// }
 
     render() {
 

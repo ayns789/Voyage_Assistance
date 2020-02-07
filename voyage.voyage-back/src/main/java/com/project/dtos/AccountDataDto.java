@@ -105,6 +105,8 @@ public class AccountDataDto {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
+	
+	
 
 }
 
