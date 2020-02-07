@@ -36,15 +36,19 @@ class ProfilPage extends React.Component {
           lastName: json.lastName
             })
       });
-      alert(this.state.username);
+      // alert(this.state.username);
   }
   render() {
     const username = this.state.username;
+    const firstName = this.state.firstName;
+    const lastName = this.state.lastName;
 
       return (
         <React.Fragment>
         <div >
-         <h1><strong>{username}</strong></h1>
+         <h1><strong>Nom d'utilisateur : {username}</strong></h1>
+         <h2>Nom : {firstName}</h2>
+         <h2>Prénom : {lastName}</h2>
       </div>
       </React.Fragment>
       )
