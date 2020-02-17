@@ -86,7 +86,7 @@ class Register extends React.Component <Props, State> {
     }
 
 
-  alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.civility );
+  // alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.civility );
 
   const url ="http://localhost:8282/api/account/add";
 

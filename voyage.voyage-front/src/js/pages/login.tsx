@@ -1,52 +1,4 @@
-
-// // ./pages/login.js
-// import React, {Component} from 'react';
-// import AuthService from '../components/authService';
-
-// const auth = new AuthService("http://localhost:8282/oauth/token");
-
-// class Login extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   componentDidMount () {
-//     if (auth.loggedIn()) {
-//       this.props.url.replaceTo('/profil');   // redirect if you're already logged in
-//     }
-//   }
-
-//   handleSubmit (e) {
-//     e.preventDefault()
-//     // yay uncontrolled forms!
-//     auth.login(this.refs.username.value, this.refs.password.value)
-//       .then(res => {
-//         console.log(res)
-//         this.props.url.replaceTo('/profil');
-//       })
-//       .catch(e => console.log(e))  // you would show/hide error messages with component state here 
-//   }
-
-//   render () {
-//     return (
-//       <div>
-//          Login
-//           <form onSubmit={this.handleSubmit} >
-//             <input type="text" ref="username"/>
-//             <input type="password" ref="password"/>
-//             <input type="submit" value="Submit"/>
-//           </form>
-//       </div>
-//     )
-//   }
-// }
-
-// export default Login;
-
-
 import * as React from "react";
-
 import { Redirect, Link } from "react-router-dom";
 // import { Container, Col, Form,
 //   FormGroup, Label, Input,
@@ -79,7 +31,6 @@ interface State {
   grant_type: string;
   client_id: string;
   user_id: number;
-  // id: number;
   access_token: string;
   // refresh_token: string;
   user: object;
@@ -291,3 +242,50 @@ export default class Login extends React.Component<Props, State> {
 };
       
 export default Login;
+
+
+
+// // ./pages/login.js
+// import React, {Component} from 'react';
+// import AuthService from '../components/authService';
+
+// const auth = new AuthService("http://localhost:8282/oauth/token");
+
+// class Login extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//   }
+
+//   componentDidMount () {
+//     if (auth.loggedIn()) {
+//       this.props.url.replaceTo('/profil');   // redirect if you're already logged in
+//     }
+//   }
+
+//   handleSubmit (e) {
+//     e.preventDefault()
+//     // yay uncontrolled forms!
+//     auth.login(this.refs.username.value, this.refs.password.value)
+//       .then(res => {
+//         console.log(res)
+//         this.props.url.replaceTo('/profil');
+//       })
+//       .catch(e => console.log(e))  // you would show/hide error messages with component state here 
+//   }
+
+//   render () {
+//     return (
+//       <div>
+//          Login
+//           <form onSubmit={this.handleSubmit} >
+//             <input type="text" ref="username"/>
+//             <input type="password" ref="password"/>
+//             <input type="submit" value="Submit"/>
+//           </form>
+//       </div>
+//     )
+//   }
+// }
+
+// export default Login;
