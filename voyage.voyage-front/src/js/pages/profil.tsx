@@ -18,7 +18,7 @@ class ProfilPage extends React.Component {
     const userId = localStorage.getItem("user_id");
             // alert( "id user: " + userId);
     
-    const url = "http://localhost:8282/api/account/get/" + userId;
+    const url = "http://localhost:8080/api/account/get/" + userId;
     
     const headers = new Headers({
                         "Accept": "application/json",
@@ -87,7 +87,7 @@ class ProfilPage extends React.Component {
                       </p>
                     </div>
                     <h3 className="font-weight-bold dark-grey-text mb-3 p-0">
-                      <a href="#!">{lastName} {firstName}</a>
+                      <a href="#!">{firstName} {lastName}</a>
                     </h3>
                     <p className="dark-grey-text mb-lg-0 mb-md-5 mb-4">
                       Sed ut perspiciatis unde voluptatem omnis iste natus error sit
