@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 	<groupId>com.project</groupId>
-	<artifactId>voyageTest</artifactId>
+	<artifactId>VA-back</artifactId>
 	<version>0.3.7-SNAPSHOT</version>
 	<name>voyage.voyage-back</name>
 	<description>API with Oauth2 / JWT / JDK13</description>
@@ -42,6 +42,11 @@
             <artifactId>modelmapper-spring</artifactId>
             <version>2.3.0</version>
         </dependency>
+        <dependency>
+    		<groupId>junit</groupId>
+    		<artifactId>junit</artifactId>
+    		<scope>test</scope>
+  		</dependency>
 	</dependencies>
 
 	<build>
