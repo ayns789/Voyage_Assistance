@@ -88,7 +88,7 @@ class Register extends React.Component <Props, State> {
 
   // alert('Le username a été soumis : ' + this.state.username + ' civility : ' + this.state.civility );
 
-  const url ="http://localhost:8080/api/account/add";
+  const url ="http://localhost:8282/api/account/add";
 
   const headers = new Headers({
     // "Accept": "application/json",
