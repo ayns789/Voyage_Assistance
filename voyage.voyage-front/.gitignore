@@ -5,7 +5,7 @@ dist/
 # Edit at https://www.gitignore.io/?templates=node,less,react,macos,visualstudiocode
 
 ### Less ###
-*.less
+# *.less
 
 ### macOS ###
 # General

@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.project</groupId>
 	<artifactId>voyageTest</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.3.7-SNAPSHOT</version>
 	<name>voyage.voyage-back</name>
 	<description>API with Oauth2 / JWT / JDK13</description>
 

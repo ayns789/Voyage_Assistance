@@ -18,7 +18,7 @@ class ProfilPage extends React.Component {
     const userId = localStorage.getItem("user_id");
             // alert( "id user: " + userId);
     
-    const url = "http://localhost:8080/api/account/get/" + userId;
+    const url = "http://localhost:8282/api/account/get/" + userId;
     
     const headers = new Headers({
                         "Accept": "application/json",

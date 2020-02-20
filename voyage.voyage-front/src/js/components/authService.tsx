@@ -3,7 +3,7 @@
 // utils/AuthService.js
 export default class AuthService {
     constructor(domain) {
-      this.domain = domain || "http://localhost:8080/oauth/token";
+      this.domain = domain || "http://localhost:8282/oauth/token";
       this.fetch = this.fetch.bind(this);
       this.login = this.login.bind(this);
       this.getProfile = this.getProfile.bind(this);
