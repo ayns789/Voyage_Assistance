@@ -17,6 +17,8 @@
 
 	<properties>
 		<java.version>13</java.version>
+		<junit.jupiter.version>5.5.2</junit.jupiter.version>
+        <junit.platform.version>1.5.2</junit.platform.version>
 	</properties>
 
 	<dependencies>
@@ -47,6 +49,18 @@
     		<artifactId>junit</artifactId>
     		<scope>test</scope>
   		</dependency>
+  		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -55,6 +69,62 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        
+<!--         désactive la config par défaut des tests Maven -->
+<!--         <configuration> -->
+<!--           <skip>true</skip>1 -->
+<!--         </configuration> -->
+
+<!-- lance les tests en excluant les tests d’intégration -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>unit-tests</id> -->
+<!--             <phase>test</phase> -->
+<!--             <goals> -->
+<!--               <goal>test</goal> -->
+<!--             </goals> -->
+<!--             <configuration> -->
+<!--               <skip>false</skip> -->
+<!--               <excludes> -->
+<!--                 <exclude>**/*IntegrationTest.java</exclude> -->
+<!--               </excludes> -->
+<!--             </configuration> -->
+<!--           </execution> -->
+          
+<!--           lance les tests mais en incluant seulement les tests d’intégration -->
+<!--           <execution>3 -->
+<!--             <id>integration-tests</id> -->
+<!--             <phase>integration-test</phase> -->
+<!--             <goals> -->
+<!--               <goal>test</goal> -->
+<!--             </goals> -->
+<!--             <configuration> -->
+<!--               <skip>false</skip> -->
+<!--               <includes> -->
+<!--                 <include>**/*IntegrationTest.java</include> -->
+<!--               </includes> -->
+<!--             </configuration> -->
+<!--           </execution> -->
+
+<!-- lance les tests en excluant les tests  unitaires et d’intégration -->
+		<executions>
+          <execution>
+            <id>unit-tests</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <skip>false</skip>
+                <includes>
+                <include>**/*IntegrationTest.java</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 		</plugins>
 	</build>
 

@@ -56,8 +56,7 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 		this.passwordEncoder = passwordEncoder;
 	}
 
-	// Throws Usern
-	// ameNotFoundException (Spring contract)
+	// Throws UsernameNotFoundException (Spring contract)
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		AccountAuthViewDto user = repo.findByUsername(username)
