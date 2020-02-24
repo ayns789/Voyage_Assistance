@@ -108,7 +108,7 @@
 <!--             </configuration> -->
 <!--           </execution> -->
 
-<!-- lance les tests en excluant les tests  unitaires et d’intégration -->
+<!-- lance les tests en incluant les tests  unitaires et d’intégration -->
 		<executions>
           <execution>
             <id>unit-tests</id>
