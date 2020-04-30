@@ -54,7 +54,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-css-only": "^4.3.1",
     "isomorphic-unfetch": "^3.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "local-storage": "^2.0.0",
     "mdbreact": "^4.22.1",
     "next": "^9.2.1",
