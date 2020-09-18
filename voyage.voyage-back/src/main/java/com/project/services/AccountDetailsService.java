@@ -2,12 +2,18 @@ package com.project.services;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import com.project.dtos.AccountCreateDto;
 import com.project.dtos.AccountDataDto;
 import com.project.dtos.AccountViewDto;
+import com.project.entities.Account;
+import com.project.dtos.AccountUpDelDto;
 
 public interface AccountDetailsService extends UserDetailsService {
 
@@ -15,7 +21,7 @@ public interface AccountDetailsService extends UserDetailsService {
     
     void delete(Long id);
 
-    void update(Long id, AccountCreateDto account);
+//    void update(Long id, AccountUpDelDto account);
 
 	List<AccountViewDto> getAll();
 	
@@ -28,6 +34,8 @@ public interface AccountDetailsService extends UserDetailsService {
      *                   username
      */
      void create(AccountCreateDto dto, PasswordEncoder passwordEncoder);
+     
+     
 
     /**
      * Indicates whether or not a {@code CustomUser} already exists with given
@@ -40,4 +48,12 @@ public interface AccountDetailsService extends UserDetailsService {
     boolean usernameIsUnique(String username);
 
     AccountCreateDto one(Long id);
+
+	void updateAccount(Long id, AccountUpDelDto dto);
+
+//	ResponseEntity<Account> updateAccount(Long id, @Valid AccountUpDelDto account);
+
+//	ResponseEntity<Account> updateAccount(long id, @Valid AccountUpDelDto account);
+
+
 }

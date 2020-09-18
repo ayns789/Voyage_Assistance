@@ -21,6 +21,8 @@ public interface AccountJpaRepo
      * @return a projected view
      */
     Optional<AccountAuthViewDto> findByUsername(String username);
+    
+    
 
     /**
      * Retrieves a projected view of the current authenticated

@@ -176,24 +176,24 @@ class Register extends React.Component <Props, State> {
                     icon="user"
                     group
                     type="text"
-                    name="lastName"
-                    className="form-control"
-                    validate
-                    error="wrong"
-                    success="right"
-                    onChange={e => this.handleChangeLastName(e.target.value)}
-                  />
-                  <MDBInput
-                    label="Votre nom"
-                    icon="user"
-                    group
-                    type="text"
                     name="firstName"
                     className="form-control"
                     validate
                     error="wrong"
                     success="right"
                     onChange={e => this.handleChangeFirstName(e.target.value)}
+                  />
+                  <MDBInput
+                    label="Votre nom"
+                    icon="user"
+                    group
+                    type="text"
+                    name="lastName"
+                    className="form-control"
+                    validate
+                    error="wrong"
+                    success="right"
+                    onChange={e => this.handleChangeLastName(e.target.value)}
                   />
                   <MDBInput
                     label="Votre nom d'utilisateur"
