@@ -3,12 +3,15 @@ package com.project.controllers;
 import java.util.List;
 import javax.validation.Valid;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import com.project.dtos.AccountAuthViewDto;
+import com.project.dtos.AccountUpDelDto;
 import com.project.dtos.AccountCreateDto;
 import com.project.dtos.AccountViewDto;
+import com.project.entities.Account;
 import com.project.services.AccountDetailsService;
 
 @RestController
@@ -17,7 +20,7 @@ public class AccountController {
 
 	private final AccountDetailsService service;
 
-	private final PasswordEncoder passwordEncoder;
+	private final PasswordEncoder passwordEncoder; 
 
 	protected AccountController(AccountDetailsService service, PasswordEncoder passwordEncoder) {
 		this.service = service;
@@ -52,13 +55,21 @@ public class AccountController {
 
 	}
 
+//	@CrossOrigin
+//	@PutMapping("/modif/{id}")
+//	ResponseEntity<Account> update(@PathVariable("id") Long id, @RequestBody @Valid AccountUpDelDto dto) {
+//		return service.updateAccount(id, dto);
+////		return null;
+//	}
+	
 	@CrossOrigin
-	@PutMapping("/{id}/modif")
-	public void update(@PathVariable("id") Long id, @RequestBody @Valid AccountCreateDto account) {
-		service.update(id, account);
-	}
+	@PutMapping("/modif/{id}")
+    public void update(@PathVariable("id") Long id,
+    		@RequestBody @Valid AccountUpDelDto dto) {
+	service.updateAccount(id, dto);
+    }
 
-	@DeleteMapping("/{id}/del")
+	@DeleteMapping("/del/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);
 	}

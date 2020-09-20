@@ -2,6 +2,7 @@ package com.project.services;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,6 +12,7 @@ import com.project.config.ResourceNotFoundException;
 import com.project.dtos.AccountAuthViewDto;
 import com.project.dtos.AccountCreateDto;
 import com.project.dtos.AccountDataDto;
+import com.project.dtos.AccountUpDelDto;
 import com.project.dtos.AccountViewDto;
 import com.project.entities.Account;
 import com.project.entities.Civility;
@@ -24,6 +26,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+
+import javax.validation.Valid;
 
 @Service
 public class AccountDetailsServiceImpl implements AccountDetailsService {
@@ -107,16 +111,93 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 		repo.deleteById(id);
 
 	}
-
+	
+//	@Override
+//	public ResponseEntity<Account> updateAccount (long id, @Valid AccountUpDelDto dto) {
+//		Account entity = repo.findById(id).get();
+//		if (entity == null)
+//			return ResponseEntity.notFound().build();
+//
+//		entity.setFirstName(dto.getFirstName());
+//		entity.setLastName(dto.getLastName());
+//		Account updatedUser = repo.save(entity);
+//		return ResponseEntity.ok(updatedUser);
+//	}
+	
+	
 	@Override
-	public void update(Long id, AccountCreateDto account) {
-		// TODO Auto-generated method stub
+    public void updateAccount(Long id, AccountUpDelDto dto) {
+	Account entity =  repo.findById(id).get();
+//	mapper.map(dto, entity); 
+	entity.setFirstName(dto.getFirstName());
+	entity.setLastName(dto.getLastName());
+	repo.save(entity);
+    }
+	
+	
+//	@Override
+//	public ResponseEntity<Account> updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
-	}
+//	@Override
+//	public void update(Long id, AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		Account entity = repo.findById(id).get();
+//		AccountUpDelDto account = new AccountUpDelDto();
+//		account.setFirstName(entity.getFirstName());
+//		account.setLastName(entity.getLastName());
+//		repo.save(account);
+//	}
 
 	@Override
 	public List<AccountViewDto> getAll() {
 		return repo.getAllProjectBy();
 	}
+
+	
+
+//	@Override
+//	public void update(Long id, AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+
+//	@Override
+//	public ResponseEntity<AccountUpDelDto> updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+//	@Override
+//	public ResponseEntity<AccountUpDelDto> updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+//	@Override
+//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+
+//	@Override
+//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+
+//	@Override
+//	public void update(Long id, AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+
+//	@Override
+//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }
 
