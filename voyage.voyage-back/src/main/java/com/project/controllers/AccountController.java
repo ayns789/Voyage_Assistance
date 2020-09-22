@@ -3,15 +3,11 @@ package com.project.controllers;
 import java.util.List;
 import javax.validation.Valid;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import com.project.dtos.AccountAuthViewDto;
 import com.project.dtos.AccountUpDelDto;
 import com.project.dtos.AccountCreateDto;
 import com.project.dtos.AccountViewDto;
-import com.project.entities.Account;
 import com.project.services.AccountDetailsService;
 
 @RestController
@@ -73,4 +69,15 @@ public class AccountController {
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);
 	}
+	
+	//test Junit 
+	
+//	@DeleteMapping("/deleteMapping")
+//    public ResponseEntity<String> deleteExample(@RequestParam("id") String id) {
+//        String response = service.deleteTest(id);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
+	
+	
+	
 }

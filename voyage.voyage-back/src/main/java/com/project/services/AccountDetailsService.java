@@ -1,18 +1,12 @@
 package com.project.services;
 
 import java.util.List;
-
-import javax.validation.Valid;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 import com.project.dtos.AccountCreateDto;
-import com.project.dtos.AccountDataDto;
 import com.project.dtos.AccountViewDto;
-import com.project.entities.Account;
 import com.project.dtos.AccountUpDelDto;
 
 public interface AccountDetailsService extends UserDetailsService {
@@ -50,6 +44,9 @@ public interface AccountDetailsService extends UserDetailsService {
     AccountCreateDto one(Long id);
 
 	void updateAccount(Long id, AccountUpDelDto dto);
+
+//	String deleteTest(String id);
+
 
 //	ResponseEntity<Account> updateAccount(Long id, @Valid AccountUpDelDto account);
 

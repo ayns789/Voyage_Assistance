@@ -2,7 +2,6 @@ package com.project.services;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,7 +10,6 @@ import com.project.config.CustomUserDetails;
 import com.project.config.ResourceNotFoundException;
 import com.project.dtos.AccountAuthViewDto;
 import com.project.dtos.AccountCreateDto;
-import com.project.dtos.AccountDataDto;
 import com.project.dtos.AccountUpDelDto;
 import com.project.dtos.AccountViewDto;
 import com.project.entities.Account;
@@ -24,10 +22,8 @@ import com.project.repositories.EstablishmentJpaRepo;
 import com.project.repositories.RoleJpaRepo;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
-import javax.validation.Valid;
 
 @Service
 public class AccountDetailsServiceImpl implements AccountDetailsService {
@@ -112,6 +108,14 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 
 	}
 	
+	// test Junit
+	
+//	 public String deleteTest(String id) {
+//	        return "Account is deleted";
+//	    }
+	
+	
+	
 //	@Override
 //	public ResponseEntity<Account> updateAccount (long id, @Valid AccountUpDelDto dto) {
 //		Account entity = repo.findById(id).get();
@@ -135,21 +139,6 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
     }
 	
 	
-//	@Override
-//	public ResponseEntity<Account> updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public void update(Long id, AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		Account entity = repo.findById(id).get();
-//		AccountUpDelDto account = new AccountUpDelDto();
-//		account.setFirstName(entity.getFirstName());
-//		account.setLastName(entity.getLastName());
-//		repo.save(account);
-//	}
 
 	@Override
 	public List<AccountViewDto> getAll() {
@@ -157,47 +146,5 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 	}
 
 	
-
-//	@Override
-//	public void update(Long id, AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-//	@Override
-//	public ResponseEntity<AccountUpDelDto> updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public ResponseEntity<AccountUpDelDto> updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-//	@Override
-//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-//	@Override
-//	public void update(Long id, AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-//	@Override
-//	public void updateAccount(Long id, @Valid AccountUpDelDto account) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 }
 
