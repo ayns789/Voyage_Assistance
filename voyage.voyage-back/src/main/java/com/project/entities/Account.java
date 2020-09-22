@@ -74,7 +74,7 @@ public class Account extends AbstractEntityId {
 		    )
 	 private List<Address> addresses;
 
-    protected Account() {
+    public Account() {
 	// Empty no-arg constructor (Hibernate)
     }
 
