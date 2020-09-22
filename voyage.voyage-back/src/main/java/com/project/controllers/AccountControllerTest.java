@@ -6,11 +6,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.project.services.CalculationServiceTest;
 
-//@RunWith(JUnitPlatform.class)
+@RunWith(JUnitPlatform.class)
 @SpringBootTest
 //@WebMvcTest
 class AccountControllerTest {
