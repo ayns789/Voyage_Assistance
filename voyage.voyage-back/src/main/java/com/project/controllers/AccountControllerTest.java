@@ -31,7 +31,7 @@ class AccountControllerTest {
   
     
     // create a testing method with method cube
-    @Test  
+    @Test
     public void testCube(){  
         System.out.println("test case cube");  
         assertEquals(27,CalculationServiceTest.cube(3));  
