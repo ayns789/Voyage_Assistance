@@ -28,20 +28,21 @@ class AccountControllerTest {
     public void setUp() throws Exception {  
         System.out.println("Executing a new test");  
     }  
-  
     
-    // create a testing method with method cube
+    
+    // call and testing method cube of CalculationServiceTest
     @Test
-    public void testCube(){  
-        System.out.println("test case cube");  
-        assertEquals(27,CalculationServiceTest.cube(3));  
-    }  
-    
-    @Test  
-    public void testFindMax(){  
-        System.out.println("test case find max");  
-        assertEquals(4,CalculationServiceTest.findMax(new int[]{1,3,4,2}));  
-    }  
+    public void testCube() {
+    	System.out.println("test base cube executed");
+    	assertEquals(27,CalculationServiceTest.cube(3));
+    }
+   
+    // call and testing method findMax of CalculationServiceTest
+    @Test
+    public void testFindMax() {
+    	System.out.println("test case find max executed");
+    	assertEquals(15 ,CalculationServiceTest.findMax(new int [] {2,15,7,9}) );
+    }
     
     @After  
     public void tearDown() throws Exception {  

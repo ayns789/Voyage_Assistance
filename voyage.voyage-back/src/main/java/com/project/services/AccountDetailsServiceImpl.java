@@ -108,25 +108,6 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 
 	}
 	
-	// test Junit
-	
-//	 public String deleteTest(String id) {
-//	        return "Account is deleted";
-//	    }
-	
-	
-	
-//	@Override
-//	public ResponseEntity<Account> updateAccount (long id, @Valid AccountUpDelDto dto) {
-//		Account entity = repo.findById(id).get();
-//		if (entity == null)
-//			return ResponseEntity.notFound().build();
-//
-//		entity.setFirstName(dto.getFirstName());
-//		entity.setLastName(dto.getLastName());
-//		Account updatedUser = repo.save(entity);
-//		return ResponseEntity.ok(updatedUser);
-//	}
 	
 	
 	@Override
